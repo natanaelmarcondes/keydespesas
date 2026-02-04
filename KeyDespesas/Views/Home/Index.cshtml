@@ -1,8 +1,135 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model KeyDespesas.ViewModels.DashboardVm
+
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="dash-page">
+
+    <!-- Cabeçalho / Boas-vindas -->
+    <div class="dash-header">
+        <div class="dash-welcome">
+            <span class="dash-user-icon">
+                <i class="bi bi-people-fill"></i>
+            </span>
+
+            <div>
+                <div class="dash-welcome-title">Bem-vindo</div>
+                <div class="dash-welcome-name">NATANAEL</div>
+                <div class="text-muted small">Competência: <strong>@Model.MesLabel</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linha 1: 2 cards -->
+    <div class="row g-3">
+        <div class="col-12 col-lg-6">
+            <div class="card dash-card">
+                <div class="card-body">
+                    <div class="dash-card-title">Saldo do Mês</div>
+                    <div class="dash-card-value @(Model.SaldoAtual >= 0 ? "text-success" : "text-danger")">
+                        R$ @Model.SaldoAtual.ToString("N2")
+                    </div>
+                    <div class="dash-card-sub">Receitas - Despesas (@Model.MesLabel)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="card dash-card">
+                <div class="card-body">
+                    <div class="dash-card-title">Resumo do Mês</div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <span class="dash-chip">Receita</span>
+                        <strong class="text-success">R$ @Model.ReceitaMes.ToString("N2")</strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <span class="dash-chip">Despesa</span>
+                        <strong class="text-danger">R$ @Model.DespesaMes.ToString("N2")</strong>
+                    </div>
+
+                    <div class="dash-card-sub mt-2">Somatório do mês (@Model.MesLabel)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linha 2: 3 cards -->
+    <div class="row g-3 mt-1">
+        <div class="col-12 col-lg-4">
+            <div class="card dash-card dash-card-accent-red">
+                <div class="card-body">
+                    <div class="dash-card-title">Vencidos do Mês</div>
+                    <div class="dash-card-value">R$ @Model.VencidosMes.ToString("N2")</div>
+                    <div class="dash-card-sub">Despesas em aberto vencidas</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="card dash-card dash-card-accent-orange">
+                <div class="card-body">
+                    <div class="dash-card-title">Vencendo Hoje</div>
+                    <div class="dash-card-value">R$ @Model.VencendoHoje.ToString("N2")</div>
+                    <div class="dash-card-sub">Despesas vencendo hoje</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="card dash-card dash-card-accent-blue">
+                <div class="card-body">
+                    <div class="dash-card-title">Vencimentos Futuros</div>
+                    <div class="dash-card-value">R$ @Model.VencimentosFuturos.ToString("N2")</div>
+                    <div class="dash-card-sub">Despesas em Aberto com vencimento futuros</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráfico pequeno -->
+    <div class="card dash-card mt-3">
+        <div class="card-body">
+            <div class="dash-card-title">Fluxo (últimos 7 dias)</div>
+            <div class="dash-chart-wrap">
+                <canvas id="dashChart" height="110"></canvas>
+            </div>
+            <div class="dash-card-sub">Baseado na data de vencimento</div>
+        </div>
+    </div>
+
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script>
+        (function () {
+            const el = document.getElementById('dashChart');
+            if (!el) return;
+
+            const labels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Labels));
+            const receitas = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Receitas7d));
+            const despesas = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Despesas7d));
+
+            new Chart(el.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        { label: 'Receitas', data: receitas, tension: 0.3 },
+                        { label: 'Despesas', data: despesas, tension: 0.3 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true } },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+        })();
+    </script>
+}
