@@ -1,0 +1,12 @@
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.exe
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\appsettings.Development.json
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\appsettings.json
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.dll
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.deps.json
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.runtimeconfig.json
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.pdb
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\MySqlConnector.dll
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
