@@ -9,7 +9,9 @@ namespace KeyDespesas.Models
         [Required]
         public string Tipo { get; set; } = "P"; // P=Despesa, R=Receita
 
-        [Required, StringLength(150)]
+        [Display(Name = "Descrição")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [StringLength(150, ErrorMessage = "O campo {0} deve ter no máximo {1} caracteres")]
         public string Descricao { get; set; } = "";
 
         [Required]

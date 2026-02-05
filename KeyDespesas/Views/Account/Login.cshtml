@@ -1,0 +1,201 @@
+﻿@{
+    Layout = null;
+    var emailFixo = "natanaelmarcondes@gmail.com";
+    var erro = TempData["LoginErro"] as string;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Login • KeyDespesas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        :root {
+            --laranja: #f57c00;
+            --cinza-texto: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter','Segoe UI',Arial,sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient( to bottom, var(--laranja) 0%, var(--laranja) 50%, #ffffff 50%, #ffffff 100% );
+        }
+
+        /* Nome do sistema */
+        .brand {
+            position: fixed;
+            top: 18px;
+            left: 24px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: .4px;
+        }
+
+        /* Centralização */
+        .wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Card */
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border-radius: 10px; /* menos arredondado */
+            padding: 28px;
+            box-shadow: 0 20px 45px rgba(0,0,0,.18);
+            text-align: center;
+        }
+
+        /* Ícone usuário */
+        .user-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--laranja);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px auto;
+            box-shadow: 0 8px 18px rgba(245,124,0,.45);
+        }
+
+            .user-icon svg {
+                width: 28px;
+                height: 28px;
+                fill: #fff;
+            }
+
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 1.35rem;
+            color: var(--cinza-texto);
+        }
+
+        p {
+            margin: 0 0 22px 0;
+            color: #666;
+            font-size: .95rem;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: .95rem;
+            margin-bottom: 16px;
+            outline: none;
+            transition: border .2s, box-shadow .2s;
+        }
+
+            input:focus {
+                border-color: var(--laranja);
+                box-shadow: 0 0 0 3px rgba(245,124,0,.18);
+            }
+
+            input[readonly] {
+                background: #f1f1f1;
+                color: #555;
+            }
+
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: .95rem;
+            font-weight: 700;
+            background: var(--laranja);
+            color: #fff;
+            cursor: pointer;
+            transition: transform .08s ease, box-shadow .15s ease;
+        }
+
+            button:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 10px 26px rgba(0,0,0,.15);
+            }
+
+        .erro {
+            background: #fff3f3;
+            color: #c62828;
+            border: 1px solid #f1c0c0;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            font-size: .9rem;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brand">KeyDespesas</div>
+
+    <div class="wrap">
+        <div class="card">
+
+            <!-- Ícone de usuário -->
+            <div class="user-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+                </svg>
+            </div>
+
+            <h1>Acesso ao sistema</h1>
+            <p>Informe sua senha para continuar</p>
+
+            @if (!string.IsNullOrWhiteSpace(erro))
+            {
+                <div class="erro">@erro</div>
+            }
+
+            <form asp-controller="Account" asp-action="Login" method="post">
+                @Html.AntiForgeryToken()
+
+                <label>E-mail</label>
+                <input type="email" name="email" value="@emailFixo" readonly />
+
+                <label>Senha</label>
+                <input type="password"
+                       name="senha"
+                       id="senha"
+                       placeholder="Digite a senha"
+                       inputmode="numeric" />
+
+                <button type="submit">ENTRAR</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var s = document.getElementById("senha");
+            if (s) s.focus();
+        };
+    </script>
+</body>
+</html>

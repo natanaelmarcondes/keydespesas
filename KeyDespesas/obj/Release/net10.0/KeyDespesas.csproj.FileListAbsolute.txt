@@ -79,8 +79,6 @@ H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\c78vzwawf8-{0}-4v8eqar
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\i5tt70s4rw-{0}-356vix0kms-356vix0kms.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\g0zhhfov05-{0}-83jwlth58m-83jwlth58m.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\tic1g3spbm-{0}-mrlpezrjn3-mrlpezrjn3.gz
-H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\hs0l7n21j8-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
-H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\mqwrf10zbe-{0}-ag7o75518u-ag7o75518u.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\37au95oc97-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\klf5u70cng-{0}-0i3buxo5is-0i3buxo5is.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\foxx7nf3at-{0}-o1o13a6vjx-o1o13a6vjx.gz
@@ -105,6 +103,8 @@ H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\KeyDespesas.genruntimeconfig.cach
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\ref\KeyDespesas.dll
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\l6irhp08u9-{0}-w5dq77b1if-w5dq77b1if.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\e7wdmjguz6-{0}-r4osml5z6h-r4osml5z6h.gz
-H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\6qukutyi83-{0}-9hr7qhjg20-9hr7qhjg20.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\897oo7vkvh-{0}-clh7fdzfml-clh7fdzfml.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\9axmygzy6v-{0}-yo1xcwso0k-yo1xcwso0k.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\6qukutyi83-{0}-u365py5e3b-u365py5e3b.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\hs0l7n21j8-{0}-enhi7arjom-enhi7arjom.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\mqwrf10zbe-{0}-wsn3tqlhp9-wsn3tqlhp9.gz

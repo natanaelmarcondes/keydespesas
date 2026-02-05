@@ -52,7 +52,7 @@ wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\lib\jquery-validation\dist\additional-methods.js
 wwwroot\lib\jquery-validation\dist\additional-methods.min.js
 wwwroot\lib\jquery-validation\dist\jquery.validate.js
-wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\css\site.css
 wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
@@ -62,7 +62,7 @@ wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\css\kpi.theme.css
-wwwroot\css\site.css
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
 wwwroot\css\titulos.theme.css
 wwwroot\grid.theme.css
 H:\KeyDespesas\KeyDespesas\wwwroot\css\categorias.theme.css
@@ -118,7 +118,7 @@ H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation\dist\additional-methods.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+H:\KeyDespesas\KeyDespesas\wwwroot\css\site.css
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation\LICENSE.md
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.min.js
@@ -128,6 +128,6 @@ H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.min.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.min.map
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\LICENSE.txt
 H:\KeyDespesas\KeyDespesas\wwwroot\css\kpi.theme.css
-H:\KeyDespesas\KeyDespesas\wwwroot\css\site.css
+H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
 H:\KeyDespesas\KeyDespesas\wwwroot\css\titulos.theme.css
 H:\KeyDespesas\KeyDespesas\wwwroot\grid.theme.css

@@ -165,7 +165,7 @@ input[type="date"].form-control:focus,
     box-shadow: 0 2px 14px rgba(0,0,0,.07);
 }
 
-/* ✅ FAIXAS COLORIDAS (sumiu? aqui resolve) */
+/* ✅ FAIXAS COLORIDAS  */
 .dash-card-accent-red {
     border-left: 6px solid #dc3545;
 }
@@ -217,4 +217,57 @@ input[type="date"].form-control:focus,
 
 .badge.text-bg-light.border {
     font-weight: 500;
+}
+/* ===== PILLS STATUS ===== */
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 999px;
+    letter-spacing: .4px;
+    white-space: nowrap;
+}
+
+/* 🔴 A PAGAR */
+.pill-pagar {
+    background-color: #fdecea;
+    color: #c62828;
+    border: 1px solid #f5c6cb;
+}
+
+/* 🟢 PAGO */
+.pill-pago {
+    background-color: #e6f4ea;
+    color: #2e7d32;
+    border: 1px solid #b7dfc2;
+}
+/* ===== STATUS ===== */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 999px;
+    letter-spacing: .4px;
+    white-space: nowrap;
+}
+
+/* 🟢 PAGO */
+.pill-ok {
+    background-color: #e6f4ea;
+    color: #2e7d32;
+    border: 1px solid #b7dfc2;
+}
+
+/* 🟤 NÃO PAGO / OUTROS */
+.pill-pendente {
+    background-color: #f3eee9;
+    color: #7b4a12;
+    border: 1px solid #d7c2a3;
 }
