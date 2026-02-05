@@ -1,0 +1,52 @@
+﻿/* =========================================================
+   KEYDESPESAS – GRID (GLOBAL)
+   Arquivo: grid.theme.css
+========================================================= */
+
+/* Wrapper padrão do grid */
+.kd-table-wrap {
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+    background: rgba(255,255,255,.85);
+}
+
+/* Tabela padrão do grid */
+.kd-table {
+    margin: 0;
+    font-size: 1rem;
+}
+
+    /* Cabeçalho sticky */
+    .kd-table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: rgba(248,249,250,.96);
+        border-bottom: 1px solid rgba(0,0,0,.08);
+        font-weight: 800;
+        padding: 12px 12px;
+        white-space: nowrap;
+    }
+
+    /* Células */
+    .kd-table tbody td {
+        padding: 12px 12px;
+        border-top: 1px solid rgba(0,0,0,.05);
+        vertical-align: middle;
+    }
+
+    /* Hover suave */
+    .kd-table tbody tr:hover {
+        background: rgba(13,110,253,.06);
+    }
+
+/* Ações (botões na coluna final) */
+.kd-actions .btn {
+    border-radius: 10px;
+    min-height: 38px;
+}
+
+    .kd-actions .btn i {
+        font-size: 1.05rem;
+    }

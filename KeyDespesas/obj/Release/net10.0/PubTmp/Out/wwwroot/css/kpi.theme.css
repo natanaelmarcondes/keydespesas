@@ -1,0 +1,49 @@
+﻿/* =========================================================
+   KEYDESPESAS – KPI / MINI CARDS (GLOBAL)
+   Arquivo: kpi.theme.css
+========================================================= */
+
+.kd-kpis {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* mini-card */
+.kd-kpi {
+    min-width: 210px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    line-height: 1.1;
+}
+
+    .kd-kpi .kd-kpi-title {
+        font-size: .85rem;
+        font-weight: 700;
+        color: rgba(0,0,0,.60);
+        letter-spacing: .2px;
+    }
+
+    .kd-kpi .kd-kpi-value {
+        margin-top: 6px;
+        font-size: 1.10rem;
+        font-weight: 900;
+        letter-spacing: .2px;
+    }
+
+/* variações discretas (borda colorida) */
+.kd-kpi--ok {
+    border-left: 6px solid rgba(25,135,84,.65);
+}
+
+.kd-kpi--bad {
+    border-left: 6px solid rgba(220,53,69,.65);
+}
+
+.kd-kpi--warn {
+    border-left: 6px solid rgba(255,140,0,.75);
+}

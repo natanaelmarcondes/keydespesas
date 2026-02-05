@@ -1,4 +1,4 @@
-wwwroot\css\site.css
+wwwroot\css\categorias.theme.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -61,7 +61,11 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-H:\KeyDespesas\KeyDespesas\wwwroot\css\site.css
+wwwroot\css\kpi.theme.css
+wwwroot\css\site.css
+wwwroot\css\titulos.theme.css
+wwwroot\grid.theme.css
+H:\KeyDespesas\KeyDespesas\wwwroot\css\categorias.theme.css
 H:\KeyDespesas\KeyDespesas\wwwroot\favicon.ico
 H:\KeyDespesas\KeyDespesas\wwwroot\js\site.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -123,3 +127,7 @@ H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.min.js
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.min.map
 H:\KeyDespesas\KeyDespesas\wwwroot\lib\jquery\LICENSE.txt
+H:\KeyDespesas\KeyDespesas\wwwroot\css\kpi.theme.css
+H:\KeyDespesas\KeyDespesas\wwwroot\css\site.css
+H:\KeyDespesas\KeyDespesas\wwwroot\css\titulos.theme.css
+H:\KeyDespesas\KeyDespesas\wwwroot\grid.theme.css

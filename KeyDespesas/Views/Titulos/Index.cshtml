@@ -8,272 +8,284 @@
     var prev = atual.AddMonths(-1);
     var next = atual.AddMonths(1);
     var mesLabel = atual.ToString("MM/yyyy");
-    
+
     var totalMes = (Model.Lista ?? new List<KeyDespesas.Models.Titulo>()).Sum(x => x.Valor);
     var totalPagar = (Model.Lista ?? new List<KeyDespesas.Models.Titulo>()).Where(x => x.Tipo == "P").Sum(x => x.Valor);
     var totalReceber = (Model.Lista ?? new List<KeyDespesas.Models.Titulo>()).Where(x => x.Tipo == "R").Sum(x => x.Valor);
     var saldoMes = totalReceber - totalPagar;
-
-
 }
 
-<div class="dash-page dash-page--compact">
+<div class="tit-page">
+    <div class="tit-wrap">
 
-    <div class="dash-header">
-        <div class="d-flex align-items-center justify-content-between">
-            <div class="dash-welcome">
-                <span class="dash-user-icon">
-                    <i class="bi bi-receipt-cutoff"></i>
+        <!-- Cabeçalho (mantém suas infos/voltar) -->
+        <div class="tit-head">
+            <div class="d-flex align-items-center gap-3">
+                <span class="dash-user-icon" style="width:46px;height:46px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;background:rgba(13,110,253,.10);border:1px solid rgba(13,110,253,.15);">
+                    <i class="bi bi-receipt-cutoff" style="font-size:1.3rem;color:rgba(13,110,253,.85)"></i>
                 </span>
-
                 <div>
-                    <div class="dash-welcome-title">Lançamentos</div>
-                    <div class="dash-welcome-name">Títulos</div>
+                    <div class="tit-title">Lançamentos — Títulos</div>
+                    <div class="tit-sub">Competência: <strong>@mesLabel</strong></div>
                 </div>
             </div>
 
-            <a class="btn btn-outline-secondary btn-sm" href="@returnUrl">
-                <i class="bi bi-arrow-left me-1"></i> Voltar
-            </a>
-        </div>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10 col-xl-9">
-
-            <div class="card dash-card">
-                <div class="card-body">
-
-                    <!-- Topo + Navegação por mês -->
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <div>
-                            <div class="dash-card-title mb-1">Títulos do mês</div>
-                            <div class="text-muted small">Competência: <strong>@mesLabel</strong></div>
-                        </div>
-
-                        <div class="d-flex gap-2 align-items-center">
-
-                            <!-- Totalizador do mês -->
-                            <div class="dash-total-box text-end me-2">
-                                <div class="small text-muted">Total do mês</div>
-                                
-                                <div class="small">
-                                    <span class="text-success">Receber: @totalReceber.ToString("N2")</span>
-                                    <span class="text-muted mx-1">|</span>
-                                    <span class="text-danger">Pagar: @totalPagar.ToString("N2")</span>
-                                </div>
-                            </div>
-
-                            <a class="btn btn-outline-secondary btn-sm"
-                               asp-action="Index"
-                               asp-route-ano="@prev.Year"
-                               asp-route-mes="@prev.Month"
-                               asp-route-returnUrl="@returnUrl"
-                               title="Mês anterior">
-                                <i class="bi bi-chevron-left"></i>
-                            </a>
-
-                            <a class="btn btn-outline-secondary btn-sm"
-                               asp-action="Index"
-                               asp-route-ano="@next.Year"
-                               asp-route-mes="@next.Month"
-                               asp-route-returnUrl="@returnUrl"
-                               title="Mês seguinte">
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-
-                            <span class="badge text-bg-light border">
-                                @(Model.Lista?.Count ?? 0) itens
-                            </span>
-                        </div>
-
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <div class="kd-kpis">
+                    <div class="kd-kpi kd-kpi--ok text-end">
+                        <div class="kd-kpi-title">Receber</div>
+                        <div class="kd-kpi-value text-success">@totalReceber.ToString("N2")</div>
                     </div>
 
-                    <!-- Form -->
-                    <form asp-action="Salvar" method="post" class="row g-2 align-items-end">
-                        @Html.AntiForgeryToken()
+                    <div class="kd-kpi kd-kpi--bad text-end">
+                        <div class="kd-kpi-title">Pagar</div>
+                        <div class="kd-kpi-value text-danger">@totalPagar.ToString("N2")</div>
+                    </div>
 
-                        <input type="hidden" asp-for="IdEdicao" />
-                        <input type="hidden" name="returnUrl" value="@returnUrl" />
-                        <input type="hidden" asp-for="Ano" />
-                        <input type="hidden" asp-for="Mes" />
+                    <div class="kd-kpi @(saldoMes >= 0 ? "kd-kpi--ok" : "kd-kpi--bad") text-end">
+                        <div class="kd-kpi-title">Saldo</div>
+                        <div class="kd-kpi-value @(saldoMes >= 0 ? "text-success" : "text-danger")">@saldoMes.ToString("N2")</div>
+                    </div>
+                </div>
+                <a class="btn btn-outline-secondary tit-btn" href="@returnUrl">
+                    <i class="bi bi-arrow-left me-1"></i> Voltar
+                </a>
+            </div>
+        </div>
 
-                        <div class="col-12 col-md-2">
-                            <label class="form-label small mb-1">Tipo</label>
-                            <select asp-for="Tipo" class="form-select form-select-sm">
-                                <option value="P">Pagar</option>
-                                <option value="R">Receber</option>
-                            </select>
-                        </div>
+        <div class="card tit-card">
+            <div class="card-body">
 
-                        <div class="col-12 col-md-5">
-                            <label class="form-label small mb-1">Descrição</label>
-                            <input asp-for="Descricao"
-                                   id="txtDescricao"
-                                   class="form-control form-control-sm"
-                                   maxlength="150"
-                                   placeholder="EX: FATURA CARTÃO, ALUGUEL..."
-                                   autocomplete="off" />
-                            <span asp-validation-for="Descricao" class="text-danger small"></span>
-                        </div>
+                <!-- Navegação por mês + contador -->
+                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                    <div>
+                        <div class="tit-title mb-0">Títulos do mês</div>
+                        <div class="tit-sub">Gerencie pagar/receber com rapidez.</div>
+                    </div>
 
-                        <div class="col-12 col-md-3">
-                            <label class="form-label small mb-1">Categoria</label>
-                            <select asp-for="IdCategoria" class="form-select form-select-sm" asp-items="Model.Categorias">
-                                <option value="">Selecione</option>
-                            </select>
-                            <span asp-validation-for="IdCategoria" class="text-danger small"></span>
-                        </div>
+                    <div class="d-flex gap-2 align-items-center flex-wrap">
+                        <a class="btn btn-outline-secondary tit-btn"
+                           asp-action="Index"
+                           asp-route-ano="@prev.Year"
+                           asp-route-mes="@prev.Month"
+                           asp-route-returnUrl="@returnUrl"
+                           title="Mês anterior">
+                            <i class="bi bi-chevron-left"></i>
+                        </a>
 
-                        <div class="col-6 col-md-2">
-                            <label class="form-label small mb-1">Valor</label>
-                            <input asp-for="Valor"
-                                   id="txtValor"
-                                   class="form-control form-control-sm"
-                                   type="text"
-                                   inputmode="decimal"
-                                   placeholder="0,00"
-                                   autocomplete="off" />
-                            <span asp-validation-for="Valor" class="text-danger small"></span>
-                        </div>
+                        <a class="btn btn-outline-secondary tit-btn"
+                           asp-action="Index"
+                           asp-route-ano="@next.Year"
+                           asp-route-mes="@next.Month"
+                           asp-route-returnUrl="@returnUrl"
+                           title="Mês seguinte">
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
 
-                        <div class="col-6 col-md-2">
-                            <label class="form-label small mb-1">Emissão</label>
-                            <input asp-for="DataEmissao" class="form-control form-control-sm" type="date" />
-                            <span asp-validation-for="DataEmissao" class="text-danger small"></span>
-                        </div>
+                        <span class="pill">
+                            <i class="bi bi-list-check"></i>
+                            @(Model.Lista?.Count ?? 0) itens
+                        </span>
+                    </div>
+                </div>
 
-                        <div class="col-6 col-md-2">
-                            <label class="form-label small mb-1">Vencimento</label>
-                            <input asp-for="DataVencimento" class="form-control form-control-sm" type="date" />
-                            <span asp-validation-for="DataVencimento" class="text-danger small"></span>
-                        </div>
+                <!-- Form (maior e mais “web”) -->
+                <form asp-action="Salvar" method="post" class="row g-3 align-items-end tit-form">
+                    @Html.AntiForgeryToken()
 
-                        <div class="col-6 col-md-3">
-                            <label class="form-label small mb-1">Status</label>
-                            <select asp-for="Status" class="form-select form-select-sm">
-                                <option value="ABERTO">ABERTO</option>
-                                <option value="PAGO">PAGO</option>
-                                <option value="CANCELADO">CANCELADO</option>
-                                <option value="VENCIDO">VENCIDO</option>
-                            </select>
-                        </div>
+                    <input type="hidden" asp-for="IdEdicao" />
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    <input type="hidden" asp-for="Ano" />
+                    <input type="hidden" asp-for="Mes" />
 
-                        <div class="col-12 col-md-3 d-flex gap-2">
-                            <button type="submit" class="btn btn-primary btn-sm flex-fill">
-                                <i class="bi bi-check2-circle me-1"></i>
-                                @(Model.IdEdicao == 0 ? "Cadastrar" : "Salvar")
-                            </button>
+                    <div class="col-12 col-lg-2">
+                        <label class="form-label mb-1">Tipo</label>
+                        <select asp-for="Tipo" class="form-select">
+                            <option value="P">Pagar</option>
+                            <option value="R">Receber</option>
+                        </select>
+                    </div>
 
-                            @if (Model.IdEdicao != 0)
-                            {
-                                <a class="btn btn-outline-secondary btn-sm flex-fill"
-                                   asp-action="Cancelar"
-                                   asp-route-ano="@Model.Ano"
-                                   asp-route-mes="@Model.Mes"
-                                   asp-route-returnUrl="@returnUrl">
-                                    <i class="bi bi-x-circle me-1"></i>
-                                    Cancelar
-                                </a>
-                            }
-                        </div>
+                    <div class="col-12 col-lg-5">
+                        <label class="form-label mb-1">Descrição</label>
+                        <input asp-for="Descricao"
+                               id="txtDescricao"
+                               class="form-control"
+                               maxlength="150"
+                               placeholder="EX: FATURA CARTÃO, ALUGUEL..."
+                               autocomplete="off" />
+                        <span asp-validation-for="Descricao" class="text-danger small"></span>
+                    </div>
 
+                    <div class="col-12 col-lg-3">
+                        <label class="form-label mb-1">Categoria</label>
+                        <select asp-for="IdCategoria" class="form-select" asp-items="Model.Categorias">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="IdCategoria" class="text-danger small"></span>
+                    </div>
 
-                        @if (!ViewData.ModelState.IsValid)
+                    <div class="col-12 col-lg-2">
+                        <label class="form-label mb-1">Valor</label>
+                        <input asp-for="Valor"
+                               id="txtValor"
+                               class="form-control"
+                               type="text"
+                               inputmode="decimal"
+                               placeholder="0,00"
+                               autocomplete="off" />
+                        <span asp-validation-for="Valor" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12 col-lg-2">
+                        <label class="form-label mb-1">Emissão</label>
+                        <input asp-for="DataEmissao" class="form-control" type="date" />
+                        <span asp-validation-for="DataEmissao" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12 col-lg-2">
+                        <label class="form-label mb-1">Vencimento</label>
+                        <input asp-for="DataVencimento" class="form-control" type="date" />
+                        <span asp-validation-for="DataVencimento" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12 col-lg-3">
+                        <label class="form-label mb-1">Status</label>
+                        <select asp-for="Status" class="form-select">
+                            <option value="ABERTO">ABERTO</option>
+                            <option value="PAGO">PAGO</option>
+                            <option value="CANCELADO">CANCELADO</option>
+                            <option value="VENCIDO">VENCIDO</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-lg-5 d-flex gap-2">
+                        <button type="submit" class="btn btn-primary tit-btn flex-fill">
+                            <i class="bi bi-check2-circle me-1"></i>
+                            @(Model.IdEdicao == 0 ? "Cadastrar" : "Salvar")
+                        </button>
+
+                        @if (Model.IdEdicao != 0)
                         {
-                            <div class="col-12">
-                                <div class="alert alert-danger py-2 mb-0 small">
-                                    Verifique os campos e tente novamente.
-                                </div>
-                            </div>
+                            <a class="btn btn-outline-secondary tit-btn flex-fill"
+                               asp-action="Cancelar"
+                               asp-route-ano="@Model.Ano"
+                               asp-route-mes="@Model.Mes"
+                               asp-route-returnUrl="@returnUrl">
+                                <i class="bi bi-x-circle me-1"></i>
+                                Cancelar
+                            </a>
                         }
-                    </form>
+                    </div>
 
-                    <hr class="my-3" />
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="col-12">
+                            <div class="alert alert-danger py-2 mb-0">
+                                <strong>Atenção:</strong> verifique os campos e tente novamente.
+                            </div>
+                        </div>
+                    }
+                </form>
 
-                    <!-- Lista -->
-                    <div class="table-responsive">
-                        <table class="table table-sm align-middle mb-0">
-                            <thead class="table-light">
+                <hr class="my-4" />
+
+                <!-- Grid (moderno / suave) -->
+                <!-- Grid (GLOBAL / padronizado) -->
+                <div class="table-responsive kd-table-wrap">
+                    <table class="table kd-table align-middle">
+                        <thead>
+                            <tr>
+                                <th style="width:90px;">Código</th>
+                                <th style="width:110px;">Tipo</th>
+                                <th>Descrição</th>
+                                <th style="width:140px;">Venc.</th>
+                                <th style="width:140px;" class="text-end">Valor</th>
+                                <th style="width:140px;">Status</th>
+                                <th style="width:220px;" class="text-end">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Lista == null || Model.Lista.Count == 0)
+                            {
                                 <tr>
-                                    <th style="width:30px;">Código</th>
-                                    <th style="width:60px;">Tipo</th>
-                                    <th style="width:300px;">Descrição</th>
-                                    <th style="width:100px;">Venc.</th>
-                                    <th style="width:100px;" class="text-end">Valor</th>
-                                    <th style="width:50px;">Status</th>
-                                    <th style="width:200px;" class="text-end">Ações</th>
+                                    <td colspan="7" class="text-muted py-4">
+                                        Nenhum título cadastrado no mês.
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @if (Model.Lista == null || Model.Lista.Count == 0)
+                            }
+                            else
+                            {
+                                foreach (var t in Model.Lista)
                                 {
                                     <tr>
-                                        <td colspan="7" class="text-muted small py-3">Nenhum título cadastrado no mês.</td>
+                                        <td class="text-muted">@t.Id</td>
+
+                                        <td>
+                                            @if (t.Tipo == "P")
+                                            {
+                                                <span class="pill pagar"><i class="bi bi-arrow-down-circle"></i> PAGAR</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="pill receber"><i class="bi bi-arrow-up-circle"></i> RECEBER</span>
+                                            }
+                                        </td>
+
+                                        <td class="fw-semibold">@t.Descricao</td>
+                                        <td>@t.DataVencimento.ToString("dd/MM/yyyy")</td>
+                                        <td class="text-end fw-bold">@t.Valor.ToString("N2")</td>
+                                        <td><span class="pill">@t.Status</span></td>
+
+                                        <!-- ✅ actions -> kd-actions -->
+                                        <td class="text-end kd-actions">
+                                            <a class="btn btn-outline-primary btn-sm"
+                                               asp-action="Index"
+                                               asp-route-editar="@t.Id"
+                                               asp-route-ano="@Model.Ano"
+                                               asp-route-mes="@Model.Mes"
+                                               asp-route-returnUrl="@returnUrl"
+                                               title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+
+                                            <button type="button"
+                                                    class="btn btn-outline-success btn-sm"
+                                                    onclick="abrirCopiar(@t.Id)"
+                                                    title="Copiar">
+                                                <i class="bi bi-copy"></i>
+                                            </button>
+
+                                            <form asp-action="Excluir" method="post" class="d-inline">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="id" value="@t.Id" />
+                                                <input type="hidden" name="returnUrl" value="@returnUrl" />
+                                                <input type="hidden" name="ano" value="@Model.Ano" />
+                                                <input type="hidden" name="mes" value="@Model.Mes" />
+
+                                                <button type="submit"
+                                                        class="btn btn-outline-danger btn-sm"
+                                                        onclick="return confirm('Excluir o título @t.Descricao ?');"
+                                                        title="Excluir">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 }
-                                else
-                                {
-                                    foreach (var t in Model.Lista)
-                                    {
-                                        <tr>
-                                            <td class="text-muted">@t.Id</td>
-                                            <td>@(t.Tipo == "P" ? "PAGAR" : "RECEBER")</td>
-                                            <td class="fw-semibold">@t.Descricao</td>
-                                            <td>@t.DataVencimento.ToString("dd/MM/yyyy")</td>
-                                            <td class="text-end">@t.Valor.ToString("N2")</td>
-                                            <td>@t.Status</td>
-                                            <td class="text-end">
-
-                                                <a class="btn btn-outline-primary btn-sm"
-                                                   asp-action="Index"
-                                                   asp-route-editar="@t.Id"
-                                                   asp-route-ano="@Model.Ano"
-                                                   asp-route-mes="@Model.Mes"
-                                                   asp-route-returnUrl="@returnUrl"
-                                                   title="Editar">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </a>
-
-                                                <button type="button"
-                                                        class="btn btn-outline-success btn-sm"
-                                                        onclick="abrirCopiar(@t.Id)"
-                                                        title="Copiar">
-                                                    <i class="bi bi-copy"></i>
-                                                </button>
-
-                                                <form asp-action="Excluir" method="post" class="d-inline">
-                                                    @Html.AntiForgeryToken()
-                                                    <input type="hidden" name="id" value="@t.Id" />
-                                                    <input type="hidden" name="returnUrl" value="@returnUrl" />
-                                                    <input type="hidden" name="ano" value="@Model.Ano" />
-                                                    <input type="hidden" name="mes" value="@Model.Mes" />
-
-                                                    <button type="submit"
-                                                            class="btn btn-outline-danger btn-sm"
-                                                            onclick="return confirm('Excluir o título @t.Descricao ?');"
-                                                            title="Excluir">
-                                                        <i class="bi bi-trash"></i>
-                                                    </button>
-                                                </form>
-
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-
+                            }
+                        </tbody>
+                    </table>
                 </div>
+
+
             </div>
-
         </div>
-    </div>
 
+    </div>
 </div>
 
-<!-- Modal Copiar Título -->
+<!-- Modal Copiar Título (mantido) -->
 <div class="modal fade" id="modalCopiar" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered">
         <div class="modal-content">
@@ -292,20 +304,20 @@
                     <input type="hidden" name="ano" value="@Model.Ano" />
                     <input type="hidden" name="mes" value="@Model.Mes" />
 
-                    <label class="form-label small mb-1">Novo vencimento</label>
+                    <label class="form-label mb-1">Novo vencimento</label>
                     <input type="date"
                            name="novoVencimento"
                            id="copiar_venc"
-                           class="form-control form-control-sm"
+                           class="form-control"
                            required />
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-outline-secondary tit-btn" data-bs-dismiss="modal">
                         Cancelar
                     </button>
 
-                    <button type="submit" class="btn btn-success btn-sm">
+                    <button type="submit" class="btn btn-success tit-btn">
                         <i class="bi bi-check2-circle me-1"></i> Copiar
                     </button>
                 </div>

@@ -5,159 +5,147 @@
     var returnUrl = (string?)ViewBag.ReturnUrl ?? Url.Action("Index", "Home");
 }
 
-<div class="dash-page dash-page--compact">
+<div class="tit-page">
+    <div class="tit-wrap">
 
-    <div class="dash-header">
-        <div class="d-flex align-items-center justify-content-between">
-            <div class="dash-welcome">
-                <span class="dash-user-icon">
-                    <i class="bi bi-tags-fill"></i>
+        <!-- Cabeçalho -->
+        <div class="tit-head">
+            <div class="d-flex align-items-center gap-3">
+                <span style="width:46px;height:46px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;background:rgba(13,110,253,.10);border:1px solid rgba(13,110,253,.15);">
+                    <i class="bi bi-tags-fill" style="font-size:1.3rem;color:rgba(13,110,253,.85)"></i>
                 </span>
 
                 <div>
-                    <div class="dash-welcome-title">Cadastro</div>
-                    <div class="dash-welcome-name">Categorias</div>
+                    <div class="tit-title">Cadastro — Categorias</div>
+                    <div class="tit-sub">Cadastre e mantenha suas categorias organizadas.</div>
                 </div>
             </div>
 
-            <!-- VOLTAR -->
-            <a class="btn btn-outline-secondary btn-sm" href="@returnUrl">
-                <i class="bi bi-arrow-left me-1"></i>
-                Voltar
-            </a>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <span class="pill">
+                    <i class="bi bi-list-check"></i>
+                    @(Model.Lista?.Count ?? 0) itens
+                </span>
+
+                <a class="btn btn-outline-secondary tit-btn" href="@returnUrl">
+                    <i class="bi bi-arrow-left me-1"></i> Voltar
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-8 col-xl-7">
+        <div class="card tit-card">
+            <div class="card-body">
 
-            <div class="card dash-card">
-                <div class="card-body">
+                <!-- Form -->
+                <form asp-action="Salvar" method="post" class="row g-3 align-items-end tit-form">
+                    @Html.AntiForgeryToken()
 
-                    <!-- Topo -->
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <div>
-                            <div class="dash-card-title mb-1">Cadastro de categorias</div>
-                        </div>
+                    <input type="hidden" asp-for="IdEdicao" />
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
 
-                        <span class="badge text-bg-light border">
-                            @(Model.Lista?.Count ?? 0) itens
-                        </span>
+                    <div class="col-12 col-lg-8">
+                        <label class="form-label mb-1">Nome</label>
+                        <input asp-for="Nome"
+                               id="txtNomeCategoria"
+                               class="form-control"
+                               maxlength="80"
+                               placeholder="EX: ALIMENTACAO TRANSPORTE FATURA"
+                               autocomplete="off" />
+                        <span asp-validation-for="Nome" class="text-danger small"></span>
                     </div>
 
-                    <!-- Form -->
-                    <form asp-action="Salvar" method="post" class="row g-2 align-items-end">
-                        @Html.AntiForgeryToken()
-                        <input type="hidden" asp-for="IdEdicao" />
+                    <div class="col-12 col-lg-4 d-flex gap-2">
+                        <button type="submit" class="btn btn-primary tit-btn flex-fill">
+                            <i class="bi bi-check2-circle me-1"></i>
+                            @(Model.IdEdicao == 0 ? "Cadastrar" : "Salvar")
+                        </button>
 
-                        <!-- ✅ returnUrl para voltar certo após salvar -->
-                        <input type="hidden" name="returnUrl" value="@returnUrl" />
-
-                        <div class="col-12 col-md-8">
-                            <label class="form-label small mb-1">Nome</label>
-
-                            <input asp-for="Nome"
-                                   id="txtNomeCategoria"
-                                   class="form-control form-control-sm"
-                                   maxlength="80"
-                                   placeholder="EX: ALIMENTACAO TRANSPORTE FATURA"
-                                   autocomplete="off" />
-
-                            <span asp-validation-for="Nome" class="text-danger small"></span>
-                        </div>
-
-                        <div class="col-12 col-md-4 d-flex gap-2">
-                            <button type="submit" class="btn btn-primary btn-sm w-100">
-                                <i class="bi bi-check2-circle me-1"></i>
-                                @(Model.IdEdicao == 0 ? "Cadastrar" : "Salvar")
-                            </button>
-
-                            @if (Model.IdEdicao != 0)
-                            {
-                                <a class="btn btn-outline-secondary btn-sm w-100"
-                                   asp-action="Cancelar"
-                                   asp-route-returnUrl="@returnUrl">
-                                    <i class="bi bi-x-circle me-1"></i>
-                                    Cancelar
-                                </a>
-                            }
-                        </div>
-
-                        @if (!ViewData.ModelState.IsValid)
+                        @if (Model.IdEdicao != 0)
                         {
-                            <div class="col-12">
-                                <div class="alert alert-danger py-2 mb-0 small">
-                                    Verifique os campos e tente novamente.
-                                </div>
-                            </div>
+                            <a class="btn btn-outline-secondary tit-btn flex-fill"
+                               asp-action="Cancelar"
+                               asp-route-returnUrl="@returnUrl">
+                                <i class="bi bi-x-circle me-1"></i>
+                                Cancelar
+                            </a>
                         }
-                    </form>
+                    </div>
 
-                    <hr class="my-3" />
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="col-12">
+                            <div class="alert alert-danger py-2 mb-0">
+                                <strong>Atenção:</strong> verifique os campos e tente novamente.
+                            </div>
+                        </div>
+                    }
+                </form>
 
-                    <!-- Lista -->
-                    <div class="table-responsive">
-                        <table class="table table-sm align-middle mb-0">
-                            <thead class="table-light">
+                <hr class="my-4" />
+
+                <!-- Grid (GLOBAL) -->
+                <div class="table-responsive kd-table-wrap">
+                    <table class="table kd-table align-middle">
+                        <thead>
+                            <tr>
+                                <th style="width:120px;">Código</th>
+                                <th>Nome</th>
+                                <th style="width:220px;" class="text-end">Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @if (Model.Lista == null || Model.Lista.Count == 0)
+                            {
                                 <tr>
-                                    <th style="width:90px;">Código</th>
-                                    <th>Nome</th>
-                                    <th style="width:160px;" class="text-end">Ações</th>
+                                    <td colspan="3" class="text-muted py-4">
+                                        Nenhuma categoria cadastrada.
+                                    </td>
                                 </tr>
-                            </thead>
-
-                            <tbody>
-                                @if (Model.Lista == null || Model.Lista.Count == 0)
+                            }
+                            else
+                            {
+                                foreach (var item in Model.Lista)
                                 {
                                     <tr>
-                                        <td colspan="3" class="text-muted small py-3">
-                                            Nenhuma categoria cadastrada.
+                                        <td class="text-muted">@item.Id</td>
+                                        <td class="fw-semibold">@item.Nome</td>
+
+                                        <!-- ✅ troca actions -> kd-actions -->
+                                        <td class="text-end kd-actions">
+                                            <a class="btn btn-outline-primary btn-sm"
+                                               asp-action="Index"
+                                               asp-route-editar="@item.Id"
+                                               asp-route-returnUrl="@returnUrl"
+                                               title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+
+                                            <form asp-action="Excluir" method="post" class="d-inline">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="id" value="@item.Id" />
+                                                <input type="hidden" name="returnUrl" value="@returnUrl" />
+
+                                                <button type="submit"
+                                                        class="btn btn-outline-danger btn-sm"
+                                                        onclick="return confirm('Excluir a categoria @item.Nome ?');"
+                                                        title="Excluir">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 }
-                                else
-                                {
-                                    foreach (var item in Model.Lista)
-                                    {
-                                        <tr>
-                                            <td class="text-muted">@item.Id</td>
-                                            <td class="fw-semibold">@item.Nome</td>
-                                            <td class="text-end">
+                            }
+                        </tbody>
 
-                                                <a class="btn btn-outline-primary btn-sm"
-                                                   asp-action="Index"
-                                                   asp-route-editar="@item.Id"
-                                                   asp-route-returnUrl="@returnUrl">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </a>
-
-                                                <form asp-action="Excluir" method="post" class="d-inline">
-                                                    @Html.AntiForgeryToken()
-                                                    <input type="hidden" name="id" value="@item.Id" />
-                                                    <input type="hidden" name="returnUrl" value="@returnUrl" />
-
-                                                    <button type="submit"
-                                                            class="btn btn-outline-danger btn-sm"
-                                                            onclick="return confirm('Excluir a categoria @item.Nome ?');">
-                                                        <i class="bi bi-trash"></i>
-                                                    </button>
-                                                </form>
-
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                            </tbody>
-
-                        </table>
-                    </div>
-
+                    </table>
                 </div>
+
             </div>
-
         </div>
-    </div>
 
+    </div>
 </div>
 
 @section Scripts {
@@ -169,17 +157,14 @@
             const txtNome = document.getElementById('txtNomeCategoria');
             if (!txtNome) return;
 
-            // 🔹 Apenas letras + espaço e sempre MAIÚSCULO
             txtNome.addEventListener('input', function () {
                 this.value = this.value
                     .toUpperCase()
                     .replace(/[^A-ZÀ-Ú\s]/g, '');
             });
 
-            // 🔹 ENTER salva | ESC volta/cancela
             document.addEventListener('keydown', function (e) {
 
-                // ENTER = salva (quando o foco está no campo)
                 if (e.key === 'Enter' && document.activeElement === txtNome) {
                     const form = txtNome.closest('form');
                     if (form) {
@@ -188,7 +173,6 @@
                     }
                 }
 
-                // ESC = se estiver editando, cancela; senão, volta
                 if (e.key === 'Escape') {
                     const btnCancelar = document.querySelector('a[href*="Cancelar"]');
                     if (btnCancelar) {
@@ -205,7 +189,6 @@
                 }
             });
 
-            // 🔹 Foco automático
             setTimeout(() => txtNome.focus(), 200);
 
         })();

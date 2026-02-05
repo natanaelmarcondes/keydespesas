@@ -28,7 +28,6 @@ H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\rjsmcshtml.dswa.cache.json
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\scopedcss\bundle\KeyDespesas.styles.css
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\scopedcss\projectbundle\KeyDespesas.bundle.scp.css
-H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\6qukutyi83-{0}-zvi6kgu0z6-zvi6kgu0z6.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\ekjicnts28-{0}-61n19gt1b8-61n19gt1b8.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\6sadjufehb-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\kr98ol49mq-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -104,3 +103,8 @@ H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\refint\KeyDespesas.dll
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\KeyDespesas.pdb
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\KeyDespesas.genruntimeconfig.cache
 H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\ref\KeyDespesas.dll
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\l6irhp08u9-{0}-w5dq77b1if-w5dq77b1if.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\e7wdmjguz6-{0}-r4osml5z6h-r4osml5z6h.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\6qukutyi83-{0}-9hr7qhjg20-9hr7qhjg20.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\897oo7vkvh-{0}-clh7fdzfml-clh7fdzfml.gz
+H:\KeyDespesas\KeyDespesas\obj\Release\net10.0\compressed\9axmygzy6v-{0}-yo1xcwso0k-yo1xcwso0k.gz

@@ -3,16 +3,44 @@
   "WorkspaceRootPath": "H:\\KeyDespesas\\KeyDespesas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\kpi.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\kpi.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\titulos.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\titulos.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\categorias.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\categorias.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\grid.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\grid.theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,22 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\viewmodels\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,81 +94,124 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T19:50:46.053Z",
+              "DocumentIndex": 6,
+              "Title": "kpi.theme.css",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\kpi.theme.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\kpi.theme.css",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\kpi.theme.css",
+              "RelativeToolTip": "wwwroot\\css\\kpi.theme.css",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-05T11:32:11.136Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "grid.theme.css",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\grid.theme.css",
+              "RelativeDocumentMoniker": "wwwroot\\grid.theme.css",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\grid.theme.css",
+              "RelativeToolTip": "wwwroot\\grid.theme.css",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAmwB8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-05T11:23:49.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "categorias.theme.css",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\categorias.theme.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\categorias.theme.css",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\categorias.theme.css",
+              "RelativeToolTip": "wwwroot\\css\\categorias.theme.css",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-05T11:09:35.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T16:07:41.07Z",
+              "WhenOpened": "2026-02-05T11:04:34.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "titulos.theme.css",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\titulos.theme.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\titulos.theme.css",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\titulos.theme.css",
+              "RelativeToolTip": "wwwroot\\css\\titulos.theme.css",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAHYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-05T11:03:46.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "site.css",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAmwM8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-02-04T15:54:11.515Z"
+              "WhenOpened": "2026-02-05T10:38:43.501Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Titulos\\Index.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
-              "RelativeToolTip": "Views\\Titulos\\Index.cshtml",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAjwIoAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAwIcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T15:01:52.954Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TitulosController.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
-              "RelativeToolTip": "Controllers\\TitulosController.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAAwKsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T15:00:59.314Z"
+              "WhenOpened": "2026-02-04T14:07:57.329Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TitulosVm.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
-              "RelativeDocumentMoniker": "ViewModels\\TitulosVm.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
-              "RelativeToolTip": "ViewModels\\TitulosVm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA5wB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T15:00:30.65Z"
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Categorias\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categorias\\Index.cshtml",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Categorias\\Index.cshtml",
+              "RelativeToolTip": "Views\\Categorias\\Index.cshtml",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAwI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-04T14:25:03.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T10:28:58.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -168,32 +223,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAFYAAAAWAAAAAAAAAA==",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Titulos\\Index.cshtml",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
+              "RelativeToolTip": "Views\\Titulos\\Index.cshtml",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAjwG4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T14:07:57.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T13:28:15.274Z",
+              "WhenOpened": "2026-02-04T15:01:52.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TitulosVm.cs",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
+              "RelativeDocumentMoniker": "ViewModels\\TitulosVm.cs",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
+              "RelativeToolTip": "ViewModels\\TitulosVm.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA5wB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T15:00:30.65Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "TitulosController.cs",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
+              "RelativeToolTip": "Controllers\\TitulosController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAwKsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T15:00:59.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "DashboardVm.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
               "RelativeDocumentMoniker": "ViewModels\\DashboardVm.cs",
@@ -205,19 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Categorias\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Categorias\\Index.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Categorias\\Index.cshtml",
-              "RelativeToolTip": "Views\\Categorias\\Index.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T14:25:03.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -229,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Titulo.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Models\\Titulo.cs",
               "RelativeDocumentMoniker": "Models\\Titulo.cs",
@@ -241,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -253,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "CategoriasVm.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\CategoriasVm.cs",
               "RelativeDocumentMoniker": "ViewModels\\CategoriasVm.cs",
@@ -265,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "CategoriasController.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriasController.cs",
@@ -277,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Categoria.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Models\\Categoria.cs",
               "RelativeDocumentMoniker": "Models\\Categoria.cs",

@@ -1,0 +1,120 @@
+﻿/* =========================================================
+   KEYDESPESAS – TEMA TÍTULOS / DESKTOP WEB
+   Arquivo: titulos.theme.css
+========================================================= */
+
+/* ===============================
+   ESTRUTURA DA PÁGINA
+================================ */
+
+.tit-page {
+    padding: 18px 0 26px;
+}
+
+.tit-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===============================
+   CARD PRINCIPAL
+================================ */
+
+.tit-card {
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    border: 1px solid rgba(0,0,0,.06);
+}
+
+    .tit-card .card-body {
+        padding: 22px 22px 18px;
+    }
+
+/* ===============================
+   CABEÇALHO
+================================ */
+
+.tit-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.7);
+    border: 1px solid rgba(0,0,0,.06);
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.tit-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+.tit-sub {
+    font-size: .95rem;
+    color: rgba(0,0,0,.55);
+}
+
+/* ===============================
+   PILLS / BADGES
+================================ */
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.10);
+    font-weight: 800;
+    font-size: .85rem;
+    background: rgba(255,255,255,.9);
+}
+
+/* ===============================
+   FORMULÁRIO (CAMPOS MAIORES)
+================================ */
+
+.tit-form label {
+    font-weight: 600;
+    color: rgba(0,0,0,.70);
+}
+
+.tit-form .form-control,
+.tit-form .form-select {
+    min-height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,.10);
+    font-size: 1rem;
+}
+
+/* ===============================
+   BOTÕES
+================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center; /* vertical */
+    justify-content: center; /* horizontal */
+    gap: 6px;
+    line-height: 1;
+}
+
+.tit-btn {
+    min-height: 44px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.actions .btn {
+    min-height: 44px;
+    border-radius: 10px;
+}
+
+    .actions .btn i {
+        font-size: 1.05rem;
+    }
+
