@@ -232,13 +232,13 @@
                                         <td>
                                             @if (t.Tipo == "P")
                                             {
-                                                <span class="pill pill-pagar">
-                                                    <i class="bi bi-arrow-up-circle"></i> PAGAR
+                                                <span class="pill pill-pendente">
+                                                    <i class="bi bi-arrow-up"></i> PAGAR
                                                 </span>
                                             }
                                             else
                                             {
-                                                <span class="pill pill-pago">
+                                                <span class="pill pill-ok">
                                                     <i class="bi bi-arrow-down"></i> RECEBER
                                                 </span>
                                             }
@@ -250,20 +250,20 @@
                                         <td>@t.DataVencimento.ToString("dd/MM/yyyy")</td>
                                         <td class="text-end fw-bold">@t.Valor.ToString("N2")</td>
                                         <td>
-                                            @if (t.Status == "Pago")
+                                            @if (t.Status.ToUpper() == "PAGO")
                                             {
-                                                <span class="pill pill-pendente">
+                                                <span class="pill pill-ok">
                                                     <i class="bi bi-check-circle-fill"></i> Pago
                                                 </span>
                                             }
                                             else
                                             {
-                                                <span class="pill pill-ok">
+                                                <span class="pill pill-pendente">
                                                     <i class="bi bi-circle-fill"></i> @t.Status
                                                 </span>
-                                                
                                             }
                                         </td>
+
 
                                         <!-- ✅ actions -> kd-actions -->
                                         <td class="text-end kd-actions">

@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "site.css",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAmwPcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-05T17:51:01.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TitulosController.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
               "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
@@ -38,12 +55,11 @@
               "RelativeToolTip": "Controllers\\TitulosController.cs",
               "ViewState": "AgIAAJMAAAAAAAAAAAAmwLkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T17:34:38.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:34:38.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CategoriasController.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriasController.cs",
@@ -51,12 +67,11 @@
               "RelativeToolTip": "Controllers\\CategoriasController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T17:34:24.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:34:24.653Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TitulosVm.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
               "RelativeDocumentMoniker": "ViewModels\\TitulosVm.cs",
@@ -64,8 +79,7 @@
               "RelativeToolTip": "ViewModels\\TitulosVm.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAA2wCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T17:33:36.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:33:36.769Z"
             },
             {
               "$type": "Document",
@@ -75,7 +89,7 @@
               "RelativeDocumentMoniker": "Views\\Titulos\\Index.cshtml",
               "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
               "RelativeToolTip": "Views\\Titulos\\Index.cshtml",
-              "ViewState": "AgIAAGgBAAAAAAAAAAAAAIwBAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAAOwAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-05T17:28:17.345Z",
               "EditorCaption": ""
