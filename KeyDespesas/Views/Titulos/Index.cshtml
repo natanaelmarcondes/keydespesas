@@ -1,13 +1,19 @@
-﻿@model KeyDespesas.ViewModels.TitulosVm
+﻿@using System.Globalization
+@model KeyDespesas.ViewModels.TitulosVm
 
 @{
+    
     ViewData["Title"] = "Títulos";
     var returnUrl = (string?)ViewBag.ReturnUrl ?? Url.Action("Index", "Home");
 
     var atual = new DateTime(Model.Ano, Model.Mes, 1);
     var prev = atual.AddMonths(-1);
     var next = atual.AddMonths(1);
-    var mesLabel = atual.ToString("MM/yyyy");
+    
+    var mesLabel = CultureInfo
+        .GetCultureInfo("pt-BR")
+        .TextInfo
+        .ToTitleCase(atual.ToString("MMMM/yyyy", new CultureInfo("pt-BR")));
 
     var totalMes = (Model.Lista ?? new List<KeyDespesas.Models.Titulo>()).Sum(x => x.Valor);
     var totalPagar = (Model.Lista ?? new List<KeyDespesas.Models.Titulo>()).Where(x => x.Tipo == "P").Sum(x => x.Valor);
@@ -60,7 +66,7 @@
                 <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
                     <div>
                         <div class="tit-title mb-0">Títulos do mês</div>
-                        <div class="tit-sub">Gerencie pagar/receber com rapidez.</div>
+                        <div class="tit-sub">Gerenciamento de Títulos.</div>
                     </div>
 
                     <div class="d-flex gap-2 align-items-center flex-wrap">
@@ -86,7 +92,7 @@
                             <i class="bi bi-list-check"></i>
                             @(Model.Lista?.Count ?? 0) itens
                         </span>
-                    </div>
+                    </div>                    
                 </div>
 
                 <!-- Form (maior e mais “web”) -->

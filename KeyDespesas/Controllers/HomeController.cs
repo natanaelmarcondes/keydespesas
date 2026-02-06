@@ -1,7 +1,8 @@
-using KeyDespesas.Data;
+ï»¿using KeyDespesas.Data;
 using KeyDespesas.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace KeyDespesas.Controllers
 {
@@ -20,63 +21,86 @@ namespace KeyDespesas.Controllers
             var hoje = DateTime.Today;
 
             var inicioMes = new DateTime(hoje.Year, hoje.Month, 1);
-            var fimMes = inicioMes.AddMonths(1); // exclusivo
+            var fimMes = inicioMes.AddMonths(1);
 
-            // Mês atual (por vencimento)
-            var titMes = await _db.Titulos
-                .Where(x => x.DataVencimento >= inicioMes && x.DataVencimento < fimMes)
-                .ToListAsync();
+            // Base do mÃªs
+            var qMes = _db.Titulos
+                .AsNoTracking()
+                .Where(x => x.DataVencimento >= inicioMes && x.DataVencimento < fimMes);
 
-            // Totais do mês
-            var receitaMes = titMes.Where(x => x.Tipo == "R").Sum(x => x.Valor);
-            var despesaMes = titMes.Where(x => x.Tipo == "P").Sum(x => x.Valor);
-
-            // Vencidos do mês (ABERTO e vencimento < hoje)
-            var vencidosMes = titMes
-                .Where(x => x.Tipo == "P" && x.Status == "ABERTO" && x.DataVencimento < hoje)
-                .Sum(x => x.Valor);
-
-            // Vencendo hoje
-            var vencendoHoje = await _db.Titulos
-                .Where(x => x.Tipo == "P" && x.Status == "ABERTO" && x.DataVencimento == hoje)
+            // âœ… Receita (R) separado por status
+            var receitaPagaMes = await qMes
+                .Where(x => x.Tipo == "R" && x.Status == "PAGO")
                 .SumAsync(x => (decimal?)x.Valor) ?? 0m;
 
-            // Futuros (ABERTO e vencimento > hoje)
-            var futuros = await _db.Titulos
+            var receitaAbertaMes = await qMes
+                .Where(x => x.Tipo == "R" && x.Status == "ABERTO")
+                .SumAsync(x => (decimal?)x.Valor) ?? 0m;
+
+            // âœ… Despesa (P) separado por status
+            var despesaPagaMes = await qMes
+                .Where(x => x.Tipo == "P" && x.Status == "PAGO")
+                .SumAsync(x => (decimal?)x.Valor) ?? 0m;
+
+            var despesaAbertaMes = await qMes
+                .Where(x => x.Tipo == "P" && x.Status == "ABERTO")
+                .SumAsync(x => (decimal?)x.Valor) ?? 0m;
+
+            // Totais do mÃªs (independente do status)
+            var receitaMes = receitaPagaMes + receitaAbertaMes;
+            var despesaMes = despesaPagaMes + despesaAbertaMes;
+
+            // âœ… Cards de vencimento: sempre "Pagar" + "ABERTO"
+            var vencidosMes = await qMes
+                .Where(x => x.Tipo == "P" && x.Status == "ABERTO" && x.DataVencimento < hoje)
+                .SumAsync(x => (decimal?)x.Valor) ?? 0m;
+
+            var vencendoHoje = await qMes
+                .Where(x => x.Tipo == "P" && x.Status == "ABERTO" && x.DataVencimento.Date == hoje)
+                .SumAsync(x => (decimal?)x.Valor) ?? 0m;
+
+            var futuros = await qMes
                 .Where(x => x.Tipo == "P" && x.Status == "ABERTO" && x.DataVencimento > hoje)
                 .SumAsync(x => (decimal?)x.Valor) ?? 0m;
 
-            // Saldo atual (simples): receitas - despesas do mês
-            // (se quiser saldo geral, posso mudar para considerar tudo que não é cancelado)
+            // âœ… Saldo (vocÃª escolhe a regra)
+            // Regra atual (previsto do mÃªs: tudo, pago+aberto):
             var saldoAtual = receitaMes - despesaMes;
 
-            // Gráfico últimos 7 dias (por vencimento)
-            var inicio7 = hoje.AddDays(-6); // 7 dias incluindo hoje
-            var tit7d = await _db.Titulos
-                .Where(x => x.DataVencimento >= inicio7 && x.DataVencimento <= hoje)
-                .ToListAsync();
+            // Se preferir saldo "realizado" (somente pagos), troque por:
+            // var saldoAtual = receitaPagaMes - despesaPagaMes;
+
+            // GrÃ¡fico (mantive seu padrÃ£o atual)
+            var titMesGraf = await qMes.ToListAsync();
 
             var labels = new List<string>();
             var rec7 = new List<decimal>();
             var desp7 = new List<decimal>();
 
-            for (var d = inicio7; d <= hoje; d = d.AddDays(1))
+            for (var d = inicioMes; d < fimMes; d = d.AddDays(1))
             {
                 labels.Add(d.ToString("dd/MM"));
-                rec7.Add(tit7d.Where(x => x.Tipo == "R" && x.DataVencimento == d).Sum(x => x.Valor));
-                desp7.Add(tit7d.Where(x => x.Tipo == "P" && x.DataVencimento == d).Sum(x => x.Valor));
+                rec7.Add(titMesGraf.Where(x => x.Tipo == "R" && x.DataVencimento.Date == d.Date).Sum(x => x.Valor));
+                desp7.Add(titMesGraf.Where(x => x.Tipo == "P" && x.DataVencimento.Date == d.Date).Sum(x => x.Valor));
             }
+
+            var cultura = new CultureInfo("pt-BR");
 
             var vm = new DashboardVm
             {
                 Ano = hoje.Year,
                 Mes = hoje.Month,
-                MesLabel = inicioMes.ToString("MM/yyyy"),
+                MesLabel = cultura.TextInfo.ToTitleCase(inicioMes.ToString("MMMM/yyyy", cultura)),
 
                 SaldoAtual = saldoAtual,
 
                 ReceitaMes = receitaMes,
                 DespesaMes = despesaMes,
+
+                ReceitaPagaMes = receitaPagaMes,
+                ReceitaAbertaMes = receitaAbertaMes,
+                DespesaPagaMes = despesaPagaMes,
+                DespesaAbertaMes = despesaAbertaMes,
 
                 VencidosMes = vencidosMes,
                 VencendoHoje = vencendoHoje,

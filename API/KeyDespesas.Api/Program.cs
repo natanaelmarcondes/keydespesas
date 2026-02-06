@@ -1,23 +1,31 @@
+﻿using KeyDespesas.Api.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
+// DbContext (MySQL + Pomelo)
+var cs = builder.Configuration.GetConnectionString("MySql");
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseMySql(cs, ServerVersion.AutoDetect(cs));
+});
+
+// Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+// Rodando só HTTP agora (evita confusão):
+// app.UseHttpsRedirection();
 
 app.MapControllers();
-
 app.Run();

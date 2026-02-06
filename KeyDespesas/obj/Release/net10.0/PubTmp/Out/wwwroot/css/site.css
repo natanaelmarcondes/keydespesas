@@ -245,3 +245,48 @@ input[type="date"].form-control:focus,
     color: #c62828;
     border: 1px solid #f5c6cb;
 }
+
+/*DHoje é dia*/
+/* Mini-card "Hoje é dia..." no cabeçalho */
+.dash-today-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    max-width: 360px; /* fica elegante no cabeçalho */
+}
+
+.dash-today-ico {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(245,124,0,.12); /* laranja do seu tema */
+    color: #f57c00;
+}
+
+    .dash-today-ico i {
+        font-size: 1.05rem;
+    }
+
+.dash-today-title {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .4px;
+    color: #6c757d; /* text-muted */
+    text-transform: uppercase;
+    line-height: 1.05;
+}
+
+.dash-today-date {
+    font-size: .95rem;
+    font-weight: 700;
+    color: #212529;
+    line-height: 1.1;
+}

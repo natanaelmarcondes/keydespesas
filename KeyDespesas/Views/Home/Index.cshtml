@@ -1,7 +1,8 @@
 ﻿@model KeyDespesas.ViewModels.DashboardVm
-
+@using System.Globalization
 @{
     ViewData["Title"] = "Dashboard";
+
 }
 
 <div class="dash-page">
@@ -16,7 +17,13 @@
             <div>
                 <div class="dash-welcome-title">Bem-vindo</div>
                 <div class="dash-welcome-name">NATANAEL</div>
-                <div class="text-muted small">Competência: <strong>@Model.MesLabel</strong></div>
+                <!--<div class="text-muted small">Competência: <strong>@Model.MesLabel</strong></div>-->
+                <div class="dash-today mt-2">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>
+                        @DateTime.Today.ToString("dd 'de' MMMM 'de' yyyy", new CultureInfo("pt-BR"))
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -40,19 +47,42 @@
                 <div class="card-body">
                     <div class="dash-card-title">Resumo do Mês</div>
 
+                    <!-- RECEITAS -->
                     <div class="d-flex justify-content-between mt-2">
-                        <span class="dash-chip">Receita</span>
+                        <span class="dash-chip">Receitas (Total)</span>
                         <strong class="text-success">R$ @Model.ReceitaMes.ToString("N2")</strong>
                     </div>
 
-                    <div class="d-flex justify-content-between mt-2">
-                        <span class="dash-chip">Despesa</span>
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>PAGO</span>
+                        <span>R$ @Model.ReceitaPagaMes.ToString("N2")</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>ABERTO</span>
+                        <span>R$ @Model.ReceitaAbertaMes.ToString("N2")</span>
+                    </div>
+
+                    <!-- DESPESAS -->
+                    <div class="d-flex justify-content-between mt-3">
+                        <span class="dash-chip">Despesas (Total)</span>
                         <strong class="text-danger">R$ @Model.DespesaMes.ToString("N2")</strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>PAGO</span>
+                        <span>R$ @Model.DespesaPagaMes.ToString("N2")</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>ABERTO</span>
+                        <span>R$ @Model.DespesaAbertaMes.ToString("N2")</span>
                     </div>
 
                     <div class="dash-card-sub mt-2">Somatório do mês (@Model.MesLabel)</div>
                 </div>
             </div>
+
         </div>
     </div>
 

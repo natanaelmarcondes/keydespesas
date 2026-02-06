@@ -42,8 +42,8 @@ namespace KeyDespesas.Controllers
 
             vm.Lista = await _db.Titulos
                 .Where(x => x.DataVencimento >= inicio && x.DataVencimento < fim)
-                .OrderByDescending(x => x.DataVencimento)
-                .ThenByDescending(x => x.Id)
+                .OrderBy(x => x.DataVencimento)   // ✅ mais próxima primeiro
+                .ThenBy(x => x.Id)                // ✅ desempate
                 .ToListAsync();
 
             if (editar.HasValue)
@@ -110,8 +110,8 @@ namespace KeyDespesas.Controllers
 
             vm.Lista = await _db.Titulos
                 .Where(x => x.DataVencimento >= inicio && x.DataVencimento < fim)
-                .OrderByDescending(x => x.DataVencimento)
-                .ThenByDescending(x => x.Id)
+                .OrderBy(x => x.DataVencimento)   // ✅ mais próxima primeiro
+                .ThenBy(x => x.Id)
                 .ToListAsync();
 
             // Normalizações

@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "H:\\KeyDespesas\\KeyDespesas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\viewmodels\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:viewmodels\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,36 +46,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "site.css",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAmwPcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAmwCQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-02-05T17:51:01.511Z",
+              "WhenOpened": "2026-02-06T15:09:06.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashboardVm.cs",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
+              "RelativeDocumentMoniker": "ViewModels\\DashboardVm.cs",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
+              "RelativeToolTip": "ViewModels\\DashboardVm.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T14:58:59.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAwHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:49:18.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-06T13:47:13.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-06T13:40:07.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "TitulosController.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
               "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
               "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
               "RelativeToolTip": "Controllers\\TitulosController.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAmwLkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAuwGUAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-05T17:34:38.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "CategoriasController.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriasController.cs",
@@ -71,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "TitulosVm.cs",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
               "RelativeDocumentMoniker": "ViewModels\\TitulosVm.cs",
@@ -83,16 +150,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Titulos\\Index.cshtml",
               "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
               "RelativeToolTip": "Views\\Titulos\\Index.cshtml",
-              "ViewState": "AgIAANgAAAAAAAAAAAAAAOwAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAwF4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-05T17:28:17.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:28:17.345Z"
             }
           ]
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KeyDespesas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f86548056d20a55116f0c8153228d5549457a36a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b8d5318ea0b4460e2e993b1350386bea02ba9ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("KeyDespesas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KeyDespesas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

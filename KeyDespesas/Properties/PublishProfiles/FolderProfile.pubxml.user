@@ -2,8 +2,8 @@
 <!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>H:\KeyDespesas</_PublishTargetUrl>
-    <History>True|2026-02-05T17:57:11.1643582Z||;True|2026-02-05T14:43:38.6273741-03:00||;True|2026-02-05T09:38:48.4989280-03:00||;True|2026-02-04T16:53:52.6262903-03:00||;True|2026-02-04T16:45:14.4512257-03:00||;</History>
+    <_PublishTargetUrl>H:\KeyDespesas\KeyDespesas\Publicacao</_PublishTargetUrl>
+    <History>True|2026-02-06T15:10:27.5008698Z||;True|2026-02-06T11:07:52.5358720-03:00||;True|2026-02-06T09:27:31.7027045-03:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
