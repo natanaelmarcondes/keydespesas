@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Titulos": {
+    "/Titulos": {
       "get": {
         "tags": [
           "Titulos"
@@ -52,7 +52,7 @@
         }
       }
     },
-    "/api/Titulos/resumo-mes": {
+    "/Titulos/resumo-mes": {
       "get": {
         "tags": [
           "Titulos"

@@ -2,7 +2,7 @@
   {
     "ContainingType": "KeyDespesas.Api.Controllers.TitulosController",
     "Method": "GetByMes",
-    "RelativePath": "api/Titulos",
+    "RelativePath": "Titulos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -36,7 +36,7 @@
   {
     "ContainingType": "KeyDespesas.Api.Controllers.TitulosController",
     "Method": "GetResumoMes",
-    "RelativePath": "api/Titulos/resumo-mes",
+    "RelativePath": "Titulos/resumo-mes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\KeyDespesas\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj": {}
+    "D:\\2N SYSTEMS\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj": {}
   },
   "projects": {
-    "H:\\KeyDespesas\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj": {
+    "D:\\2N SYSTEMS\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\KeyDespesas\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj",
+        "projectUniqueName": "D:\\2N SYSTEMS\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj",
         "projectName": "KeyDespesas.Api",
-        "projectPath": "H:\\KeyDespesas\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj",
-        "packagesPath": "C:\\Users\\natanael\\.nuget\\packages\\",
-        "outputPath": "H:\\KeyDespesas\\API\\KeyDespesas.Api\\obj\\",
+        "projectPath": "D:\\2N SYSTEMS\\API\\KeyDespesas.Api\\KeyDespesas.Api.csproj",
+        "packagesPath": "C:\\Users\\Natanael\\.nuget\\packages\\",
+        "outputPath": "D:\\2N SYSTEMS\\API\\KeyDespesas.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\natanael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Natanael\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
