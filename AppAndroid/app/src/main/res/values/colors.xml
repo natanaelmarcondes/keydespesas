@@ -2,4 +2,18 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Bootstrap Colors -->
+    <color name="bs_primary">#0d6efd</color>
+    <color name="bs_secondary">#6c757d</color>
+    <color name="bs_success">#198754</color>
+    <color name="bs_info">#0dcaf0</color>
+    <color name="bs_warning">#ffc107</color>
+    <color name="bs_danger">#dc3545</color>
+    <color name="bs_light">#f8f9fa</color>
+    <color name="bs_dark">#212529</color>
+
+    <color name="bs_gray_100">#f8f9fa</color>
+    <color name="bs_gray_200">#e9ecef</color>
+    <color name="bs_gray_600">#6c757d</color>
 </resources>

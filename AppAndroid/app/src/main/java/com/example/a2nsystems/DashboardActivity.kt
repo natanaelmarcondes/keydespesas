@@ -21,7 +21,8 @@ class DashboardActivity : AppCompatActivity() {
 
     private val apiService by lazy {
         Retrofit.Builder()
-            .baseUrl("https://keysolution.com.br/")
+            .baseUrl("https://api.keysolution.com.br/")
+            .client(UnsafeOkHttpClient.getUnsafeOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
