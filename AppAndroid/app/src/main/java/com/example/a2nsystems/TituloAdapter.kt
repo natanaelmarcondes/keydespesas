@@ -1,9 +1,6 @@
 package com.example.a2nsystems
 
 import android.graphics.Color
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -12,6 +9,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a2nsystems.databinding.ItemTituloBinding
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Locale
 
 class TituloAdapter(
@@ -43,14 +42,43 @@ class TituloAdapter(
             val context = binding.root.context
             binding.tvDescricao.text = titulo.descricao
             binding.tvCategoria.text = titulo.categoriaNome
-            binding.tvStatus.text = titulo.status.uppercase()
             
-            // Status: Badge style colors
-            if (titulo.status.equals("PAGO", ignoreCase = true)) {
-                binding.tvStatus.setBackgroundColor(ContextCompat.getColor(context, R.color.bs_success))
-            } else {
-                binding.tvStatus.setBackgroundColor(ContextCompat.getColor(context, R.color.orange_secondary))
+            val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+            val dataVencimentoStr = titulo.dataVencimento.split("T")[0]
+            val dataVencimentoDate = try { sdf.parse(dataVencimentoStr) } catch (e: Exception) { null }
+            
+            val calendarHoje = Calendar.getInstance()
+            calendarHoje.set(Calendar.HOUR_OF_DAY, 0)
+            calendarHoje.set(Calendar.MINUTE, 0)
+            calendarHoje.set(Calendar.SECOND, 0)
+            calendarHoje.set(Calendar.MILLISECOND, 0)
+            
+            val isVencido = dataVencimentoDate != null && 
+                            dataVencimentoDate.before(calendarHoje.time) && 
+                            !titulo.status.equals("PAGO", true)
+
+            val statusExibicao = if (isVencido) "VENCIDO" else titulo.status.uppercase()
+            binding.tvStatus.text = statusExibicao
+            
+            // Lógica de Status com ícone e cores (Mini Card)
+            val colorStatus = when {
+                titulo.status.equals("PAGO", true) -> {
+                    binding.ivStatusIcon.setImageResource(android.R.drawable.checkbox_on_background)
+                    ContextCompat.getColor(context, R.color.bs_success)
+                }
+                isVencido || titulo.status.equals("VENCIDO", true) -> {
+                    binding.ivStatusIcon.setImageResource(android.R.drawable.ic_dialog_alert)
+                    ContextCompat.getColor(context, R.color.bs_danger)
+                }
+                else -> { // ABERTO ou outros
+                    binding.ivStatusIcon.setImageResource(android.R.drawable.ic_menu_recent_history)
+                    ContextCompat.getColor(context, R.color.orange_primary)
+                }
             }
+            
+            binding.cardStatus.setStrokeColor(colorStatus)
+            binding.tvStatus.setTextColor(colorStatus)
+            binding.ivStatusIcon.setColorFilter(colorStatus)
 
             // Formatação do valor colorido por inteiro
             val ptBr = Locale("pt", "BR")
@@ -67,9 +95,9 @@ class TituloAdapter(
             binding.tvValor.setTextColor(colorValor)
             
             // Formatação de data
-            val dataVenc = titulo.dataVencimento.split("T")[0].split("-")
-            if (dataVenc.size == 3) {
-                binding.tvVencimento.text = "Vencimento: ${dataVenc[2]}/${dataVenc[1]}/${dataVenc[0]}"
+            val dataVencParts = dataVencimentoStr.split("-")
+            if (dataVencParts.size == 3) {
+                binding.tvVencimento.text = "Vencimento: ${dataVencParts[2]}/${dataVencParts[1]}/${dataVencParts[0]}"
             } else {
                 binding.tvVencimento.text = "Vencimento: ${titulo.dataVencimento}"
             }
