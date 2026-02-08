@@ -77,3 +77,11 @@
     border-radius: 12px;
     font-weight: 700;
 }
+/* ===== CATEGORIAS (linha card padrão) ===== */
+table.table.kd-table tbody tr.kd-row--cat > td:first-child::before {
+    background: #0d6efd; /* azul */
+}
+
+table.table.kd-table tbody tr.kd-row--cat > td {
+    background: rgba(13,110,253,.035) !important;
+}

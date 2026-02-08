@@ -95,6 +95,68 @@ namespace KeyDespesas.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CopiarMes(int ano, int mes, string? returnUrl)
+        {
+            var inicio = new DateTime(ano, mes, 1);
+            var fim = inicio.AddMonths(1); // exclusivo
+
+            var destino = inicio.AddMonths(1);
+            var inicioDest = destino;
+            var fimDest = destino.AddMonths(1);
+
+            // ✅ Copia somente ABERTO do mês atual
+            var lista = await _db.Titulos
+                .Where(x => x.DataVencimento >= inicio && x.DataVencimento < fim)
+                .OrderBy(x => x.DataVencimento)
+                .ThenBy(x => x.Id)
+                .ToListAsync();
+
+            if (lista.Count == 0)
+                return RedirectToAction(nameof(Index), new { ano, mes, returnUrl });
+
+            // ✅ proteção simples contra duplicar (opcional, mas recomendado)
+            // Se já existir algum "ABERTO" no mês destino com mesma Descrição/Valor/Categoria e mesmo dia, ele não copia de novo.
+            var jaNoDestino = await _db.Titulos
+                .Where(x => x.DataVencimento >= inicioDest && x.DataVencimento < fimDest)
+                .Select(x => new { x.Descricao, x.IdCategoria, x.Valor, Dia = x.DataVencimento.Day })
+                .ToListAsync();
+
+            foreach (var t in lista)
+            {
+                var novoVenc = t.DataVencimento.AddMonths(1).Date;
+
+                var existe = jaNoDestino.Any(x =>
+                    (x.Descricao ?? "") == (t.Descricao ?? "") &&
+                    x.IdCategoria == t.IdCategoria &&
+                    x.Valor == t.Valor &&
+                    x.Dia == novoVenc.Day
+                );
+
+                if (existe) continue;
+
+                _db.Titulos.Add(new Titulo
+                {
+                    Tipo = t.Tipo,
+                    Descricao = t.Descricao,
+                    IdCategoria = t.IdCategoria,
+                    Valor = t.Valor,
+
+                    DataEmissao = DateTime.Today,
+                    DataVencimento = novoVenc,
+
+                    Status = "ABERTO"
+                });
+            }
+
+            await _db.SaveChangesAsync();
+
+            // ✅ após copiar, já abre o mês seguinte
+            return RedirectToAction(nameof(Index), new { ano = destino.Year, mes = destino.Month, returnUrl });
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Salvar(TitulosVm vm, string? returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

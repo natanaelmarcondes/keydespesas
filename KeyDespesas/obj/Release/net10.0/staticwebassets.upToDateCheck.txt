@@ -1,7 +1,7 @@
-wwwroot\css\categorias.theme.css
+wwwroot\css\titulos.theme.css
 wwwroot\css\kpi.theme.css
 wwwroot\css\site.css
-wwwroot\css\titulos.theme.css
+wwwroot\css\categorias.theme.css
 wwwroot\favicon.ico
 wwwroot\grid.theme.css
 wwwroot\js\site.js
@@ -124,10 +124,10 @@ D:\2N SYSTEMS\KeyDespesas\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 D:\2N SYSTEMS\KeyDespesas\wwwroot\js\site.js
 D:\2N SYSTEMS\KeyDespesas\wwwroot\grid.theme.css
 D:\2N SYSTEMS\KeyDespesas\wwwroot\favicon.ico
-D:\2N SYSTEMS\KeyDespesas\wwwroot\css\titulos.theme.css
+D:\2N SYSTEMS\KeyDespesas\wwwroot\css\categorias.theme.css
 D:\2N SYSTEMS\KeyDespesas\wwwroot\css\site.css
 D:\2N SYSTEMS\KeyDespesas\wwwroot\css\kpi.theme.css
-D:\2N SYSTEMS\KeyDespesas\wwwroot\css\categorias.theme.css
+D:\2N SYSTEMS\KeyDespesas\wwwroot\css\titulos.theme.css
 D:\2N SYSTEMS\KeyDespesas\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
 D:\2N SYSTEMS\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\2N SYSTEMS\KeyDespesas\wwwroot\lib\jquery\dist\jquery.slim.js

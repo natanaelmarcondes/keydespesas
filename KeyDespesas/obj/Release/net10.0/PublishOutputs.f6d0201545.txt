@@ -1,4 +1,5 @@
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.exe
+D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\Publicacao\web.config
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\web.config
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\web.config
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\web.config
@@ -25,6 +26,11 @@ D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\P
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\KeyDespesas.deps.json
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\KeyDespesas.runtimeconfig.json
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\KeyDespesas.staticwebassets.endpoints.json
+D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\Publicacao\appsettings.Development.json
+D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\Publicacao\appsettings.json
+D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\Publicacao\KeyDespesas.deps.json
+D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\Publicacao\KeyDespesas.runtimeconfig.json
+D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\Publicacao\Publicacao\Publicacao\Publicacao\Publicacao\KeyDespesas.staticwebassets.endpoints.json
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.dll
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.deps.json
 D:\2N SYSTEMS\KeyDespesas\obj\Release\net10.0\PubTmp\Out\KeyDespesas.runtimeconfig.json
