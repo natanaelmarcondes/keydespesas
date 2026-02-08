@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a2nsystems.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayout
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -39,8 +40,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        currentYear = intent.getIntExtra("EXTRA_ANO", 2026)
-        currentMonth = intent.getIntExtra("EXTRA_MES", 2)
+        // Definindo data padrão (pode ser a atual, mantendo 02/2026 conforme solicitado anteriormente)
+        currentYear = 2026
+        currentMonth = 2
 
         setupRecyclerView()
         setupListeners()
@@ -69,9 +71,13 @@ class MainActivity : AppCompatActivity() {
             fetchTitulos()
         }
 
-        binding.swMostrarReceitas.setOnCheckedChangeListener { _, _ ->
-            aplicarFiltro()
-        }
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                aplicarFiltro()
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 
     private fun updatePeriodoText() {
@@ -95,16 +101,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun aplicarFiltro() {
-        val mostrarReceitas = binding.swMostrarReceitas.isChecked
-        val listaFiltrada = if (mostrarReceitas) {
-            todosTitulos
-        } else {
-            todosTitulos.filter { it.tipo.equals("P", ignoreCase = true) }
+        val selectedTabPosition = binding.tabLayout.selectedTabPosition
+        val listaFiltrada = when (selectedTabPosition) {
+            1 -> todosTitulos.filter { it.tipo.equals("R", ignoreCase = true) } // Receitas
+            2 -> todosTitulos.filter { it.tipo.equals("P", ignoreCase = true) } // Despesas
+            else -> todosTitulos // Todas
         }
         adapter.submitList(listaFiltrada)
         
-        if (listaFiltrada.isEmpty()) {
-            Toast.makeText(this, "Nenhum registro para exibir", Toast.LENGTH_SHORT).show()
+        if (listaFiltrada.isEmpty() && todosTitulos.isNotEmpty()) {
+            Toast.makeText(this, "Nenhum registro nesta categoria", Toast.LENGTH_SHORT).show()
         }
     }
 
