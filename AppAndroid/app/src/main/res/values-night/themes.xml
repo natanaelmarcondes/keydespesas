@@ -1,14 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Base.Theme._2NSystems" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
+
         <item name="colorPrimary">@color/orange_primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/orange_secondary</item>
 
-        <!-- Status bar color. -->
+        <!-- Base de superfícies/textos -->
+        <item name="colorSurface">@color/bs_dark</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Borda do card/divisor -->
+        <item name="colorOutline">@color/surface_lighter</item>
+
+        <!-- Statusbar no escuro: fundo escuro e ícones claros -->
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:windowLightStatusBar">false</item>
+
     </style>
 
     <style name="Theme._2NSystems" parent="Base.Theme._2NSystems" />

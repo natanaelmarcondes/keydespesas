@@ -290,3 +290,115 @@ input[type="date"].form-control:focus,
     color: #212529;
     line-height: 1.1;
 }
+/* =========================================================
+   KEYDESPESAS – TÍTULOS (LINHAS EM ESTILO CARD)
+   Compatível com Bootstrap .table
+========================================================= */
+
+/* Força separação entre linhas (efeito card) */
+table.table.kd-table {
+    border-collapse: separate !important;
+    border-spacing: 0 12px !important;
+    --bs-table-bg: transparent;
+}
+
+    /* Remove estilo padrão do Bootstrap nas células */
+    table.table.kd-table > :not(caption) > * > * {
+        border-bottom-width: 0 !important;
+        background: transparent !important;
+    }
+
+    /* Base do card (cada linha) */
+    table.table.kd-table tbody tr.kd-row > td {
+        background: #fff !important;
+        border-top: 1px solid rgba(0,0,0,.06) !important;
+        border-bottom: 1px solid rgba(0,0,0,.06) !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        box-shadow: 0 8px 22px rgba(0,0,0,.07) !important;
+    }
+
+        /* Bordas laterais e arredondamento */
+        table.table.kd-table tbody tr.kd-row > td:first-child {
+            border-left: 1px solid rgba(0,0,0,.06) !important;
+            border-top-left-radius: 14px !important;
+            border-bottom-left-radius: 14px !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        table.table.kd-table tbody tr.kd-row > td:last-child {
+            border-right: 1px solid rgba(0,0,0,.06) !important;
+            border-top-right-radius: 14px !important;
+            border-bottom-right-radius: 14px !important;
+        }
+
+        /* Faixa colorida à esquerda (accent) */
+        table.table.kd-table tbody tr.kd-row > td:first-child::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            border-radius: 14px 0 0 14px;
+        }
+
+    /* Hover sutil */
+    table.table.kd-table tbody tr.kd-row:hover > td {
+        transform: translateY(-1px);
+        transition: all .12s ease;
+        box-shadow: 0 14px 34px rgba(0,0,0,.10) !important;
+    }
+
+    /* ===== CORES POR STATUS ===== */
+
+    /* 🟢 Pago */
+    table.table.kd-table tbody tr.kd-row--ok > td:first-child::before {
+        background: #198754;
+    }
+
+    table.table.kd-table tbody tr.kd-row--ok > td {
+        background: rgba(25,135,84,.045) !important;
+    }
+
+    /* 🟠 A vencer */
+    table.table.kd-table tbody tr.kd-row--warn > td:first-child::before {
+        background: #f57c00;
+    }
+
+    table.table.kd-table tbody tr.kd-row--warn > td {
+        background: rgba(245,124,0,.055) !important;
+    }
+
+    /* 🔴 Vencido */
+    table.table.kd-table tbody tr.kd-row--bad > td:first-child::before {
+        background: #dc3545;
+    }
+
+    table.table.kd-table tbody tr.kd-row--bad > td {
+        background: rgba(220,53,69,.055) !important;
+    }
+
+/* =========================================================
+   STATUS PILL – COMPLEMENTOS
+========================================================= */
+
+/* 🟠 A vencer */
+.pill-warn {
+    background-color: rgba(245,124,0,.12);
+    color: #f57c00;
+    border: 1px solid rgba(245,124,0,.22);
+}
+
+/* 🔴 Vencido */
+.pill-bad {
+    background-color: rgba(220,53,69,.12);
+    color: #dc3545;
+    border: 1px solid rgba(220,53,69,.22);
+}
+
+/* ícones do pill */
+.pill i {
+    font-size: .85rem;
+}

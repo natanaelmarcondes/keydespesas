@@ -89,7 +89,7 @@ class TituloAdapter(
             val sinal = if (isReceita) "+" else "-"
             val fullText = "$sinal $valorFormatado"
             
-            val colorValor = if (isReceita) ContextCompat.getColor(context, R.color.bs_success) else ContextCompat.getColor(context, R.color.bs_danger)
+            val colorValor = if (isReceita) ContextCompat.getColor(context, R.color.bs_success) else ContextCompat.getColor(context, R.color.white)
             
             binding.tvValor.text = fullText
             binding.tvValor.setTextColor(colorValor)

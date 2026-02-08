@@ -219,11 +219,10 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @if (Model.Lista == null || Model.Lista.Count == 0)
                             {
                                 <tr>
-                                    <td colspan="7" class="text-muted py-4">
+                                    <td colspan="8" class="text-muted py-4">
                                         Nenhum título cadastrado no mês.
                                     </td>
                                 </tr>
@@ -232,8 +231,32 @@
                             {
                                 foreach (var t in Model.Lista)
                                 {
-                                    <tr>
-                                        <td class="text-muted">@t.Id</td>
+                                    var hoje = DateTime.Today;
+
+                                    var statusUp = (t.Status ?? "").Trim().ToUpperInvariant();
+                                    var pago = statusUp == "PAGO";
+
+                                    // regra automática por data
+                                    var vencido = !pago && t.DataVencimento.Date < hoje;
+
+                                    var rowClass = pago ? "kd-row kd-row--ok"
+                                    : vencido ? "kd-row kd-row--bad"
+                                    : "kd-row kd-row--warn";
+
+                                    var pillClass = pago ? "pill pill-ok"
+                                    : vencido ? "pill pill-bad"
+                                    : "pill pill-warn";
+
+                                    var pillText = pago ? "Pago"
+                                    : vencido ? "Vencido"
+                                    : "A vencer";
+
+                                    var pillIcon = pago ? "bi-check-circle-fill"
+                                    : vencido ? "bi-exclamation-triangle-fill"
+                                    : "bi-clock-fill";
+
+                                    <tr class="@rowClass">
+                                        <td class="text-muted">&nbsp;&nbsp;@t.Id</td>
 
                                         <td>
                                             @if (t.Tipo == "P")
@@ -248,45 +271,32 @@
                                                     <i class="bi bi-arrow-down"></i> RECEBER
                                                 </span>
                                             }
-
                                         </td>
 
                                         <td class="fw-semibold">@t.Descricao</td>
                                         <td>@(mapaCat.TryGetValue(t.IdCategoria, out var nomeCat) ? nomeCat : "-")</td>
                                         <td>@t.DataVencimento.ToString("dd/MM/yyyy")</td>
                                         <td class="text-end fw-bold">@t.Valor.ToString("N2")</td>
+
                                         <td>
-                                            @if (t.Status.ToUpper() == "PAGO")
-                                            {
-                                                <span class="pill pill-ok">
-                                                    <i class="bi bi-check-circle-fill"></i> Pago
-                                                </span>
-                                            }
-                                            else
-                                            {
-                                                <span class="pill pill-pendente">
-                                                    <i class="bi bi-circle-fill"></i> @t.Status
-                                                </span>
-                                            }
+                                            <span class="@pillClass">
+                                                <i class="bi @pillIcon"></i> @pillText
+                                            </span>
                                         </td>
 
-
-                                        <!-- ✅ actions -> kd-actions -->
                                         <td class="text-end kd-actions">
                                             <a class="btn btn-outline-primary btn-sm"
                                                asp-action="Index"
                                                asp-route-editar="@t.Id"
                                                asp-route-ano="@Model.Ano"
                                                asp-route-mes="@Model.Mes"
-                                               asp-route-returnUrl="@returnUrl"
-                                               title="Editar">
+                                               asp-route-returnUrl="@returnUrl">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
 
                                             <button type="button"
                                                     class="btn btn-outline-success btn-sm"
-                                                    onclick="abrirCopiar(@t.Id)"
-                                                    title="Copiar">
+                                                    onclick="abrirCopiar(@t.Id)">
                                                 <i class="bi bi-copy"></i>
                                             </button>
 
@@ -299,8 +309,7 @@
 
                                                 <button type="submit"
                                                         class="btn btn-outline-danger btn-sm"
-                                                        onclick="return confirm('Excluir o título @t.Descricao ?');"
-                                                        title="Excluir">
+                                                        onclick="return confirm('Excluir o título @t.Descricao ?');">
                                                     <i class="bi bi-trash"></i>
                                                 </button>
                                             </form>
