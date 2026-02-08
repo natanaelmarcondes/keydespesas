@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        binding.btnVoltar.setOnClickListener { finish() }
         binding.btnRecarregar.setOnClickListener { fetchTitulos() }
 
         binding.btnAnterior.setOnClickListener {

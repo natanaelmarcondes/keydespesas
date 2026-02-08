@@ -14,41 +14,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="4dp"
+        android:padding="8dp"
         android:background="@color/surface_dark"
         android:elevation="4dp"
+        android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageButton
-            android:id="@+id/btnVoltar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_revert"
-            android:contentDescription="Sair"
-            app:tint="@color/text_primary" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_marginStart="8dp"
-            android:text="Controle Financeiro"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRecarregar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_rotate"
-            android:contentDescription="Recarregar"
-            app:tint="@color/text_primary" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Atualizar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/orange_primary"
+            app:cornerRadius="8dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +55,8 @@
             android:text="&lt;"
             android:textSize="12sp"
             app:strokeColor="@color/orange_primary"
-            android:textColor="@color/orange_primary" />
+            app:backgroundTint="@color/orange_primary"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tvPeriodo"
@@ -94,8 +77,9 @@
             android:padding="0dp"
             android:text="&gt;"
             android:textSize="12sp"
+            app:backgroundTint="@color/orange_primary"
             app:strokeColor="@color/orange_primary"
-            android:textColor="@color/orange_primary" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
@@ -124,7 +108,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rec. T."
+                    android:text="Total Receita"
                     android:textSize="10sp"
                     android:textColor="@color/text_secondary" />
                 <TextView
@@ -146,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Des. T."
+                    android:text="Total Despesas"
                     android:textSize="10sp"
                     android:textColor="@color/text_secondary" />
                 <TextView
@@ -168,7 +152,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rec. P."
+                    android:text="Receitas Pagas"
                     android:textSize="10sp"
                     android:textColor="@color/text_secondary" />
                 <TextView
@@ -190,7 +174,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Des. P."
+                    android:text="Despesas Pagas"
                     android:textSize="10sp"
                     android:textColor="@color/text_secondary" />
                 <TextView
