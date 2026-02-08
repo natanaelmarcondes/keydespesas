@@ -3,17 +3,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Bootstrap Colors -->
-    <color name="bs_primary">#0d6efd</color>
-    <color name="bs_secondary">#6c757d</color>
-    <color name="bs_success">#198754</color>
-    <color name="bs_info">#0dcaf0</color>
-    <color name="bs_warning">#ffc107</color>
-    <color name="bs_danger">#dc3545</color>
-    <color name="bs_light">#f8f9fa</color>
-    <color name="bs_dark">#212529</color>
+    <!-- Orange Theme Colors -->
+    <color name="orange_primary">#FF8C00</color> <!-- DarkOrange -->
+    <color name="orange_secondary">#FFA500</color> <!-- Orange -->
+    <color name="orange_light">#FFDAB9</color> <!-- PeachPuff -->
+    <color name="orange_dark">#E67E00</color>
 
-    <color name="bs_gray_100">#f8f9fa</color>
-    <color name="bs_gray_200">#e9ecef</color>
+    <color name="app_background">#121212</color> <!-- Dark surface -->
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="surface_lighter">#2C2C2C</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+
+    <!-- Status Colors -->
+    <color name="bs_success">#28a745</color>
+    <color name="bs_danger">#dc3545</color>
+    <color name="bs_dark">#212529</color>
     <color name="bs_gray_600">#6c757d</color>
 </resources>

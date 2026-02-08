@@ -6,6 +6,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -39,18 +40,19 @@ class TituloAdapter(
         }
 
         fun bind(titulo: Titulo) {
+            val context = binding.root.context
             binding.tvDescricao.text = titulo.descricao
             binding.tvCategoria.text = titulo.categoriaNome
-            binding.tvStatus.text = titulo.status
+            binding.tvStatus.text = titulo.status.uppercase()
             
-            // Status: Verde se PAGO, Vermelho caso contrário
+            // Status: Badge style colors
             if (titulo.status.equals("PAGO", ignoreCase = true)) {
-                binding.tvStatus.setTextColor(Color.parseColor("#388E3C"))
+                binding.tvStatus.setBackgroundColor(ContextCompat.getColor(context, R.color.bs_success))
             } else {
-                binding.tvStatus.setTextColor(Color.RED)
+                binding.tvStatus.setBackgroundColor(ContextCompat.getColor(context, R.color.orange_secondary))
             }
 
-            // Formatação do valor com sinal colorido
+            // Formatação do valor colorido por inteiro
             val ptBr = Locale("pt", "BR")
             val format = NumberFormat.getCurrencyInstance(ptBr)
             val valorFormatado = format.format(titulo.valor)
@@ -59,24 +61,10 @@ class TituloAdapter(
             val sinal = if (isReceita) "+" else "-"
             val fullText = "$sinal $valorFormatado"
             
-            val spannable = SpannableString(fullText)
-            val colorSinal = if (isReceita) Color.parseColor("#388E3C") else Color.RED
+            val colorValor = if (isReceita) ContextCompat.getColor(context, R.color.bs_success) else ContextCompat.getColor(context, R.color.bs_danger)
             
-            // Define a cor apenas para o sinal (primeiro caractere)
-            spannable.setSpan(
-                ForegroundColorSpan(colorSinal),
-                0, 1,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            
-            // Define a cor BRANCA para o restante do valor conforme solicitado
-            spannable.setSpan(
-                ForegroundColorSpan(Color.WHITE),
-                1, fullText.length,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            
-            binding.tvValor.text = spannable
+            binding.tvValor.text = fullText
+            binding.tvValor.setTextColor(colorValor)
             
             // Formatação de data
             val dataVenc = titulo.dataVencimento.split("T")[0].split("-")
