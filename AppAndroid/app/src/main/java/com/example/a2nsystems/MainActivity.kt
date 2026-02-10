@@ -3,6 +3,7 @@ package com.example.a2nsystems
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,10 +18,16 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val adapter = TituloAdapter { 
-        Toast.makeText(this, "Atualizando dados...", Toast.LENGTH_SHORT).show()
-        fetchTitulos() 
-    }
+    
+    private val adapter = TituloAdapter(
+        onStatusClick = { titulo ->
+            confirmarAlteracaoStatus(titulo)
+        },
+        onLongClick = {
+            Toast.makeText(this, "Atualizando dados...", Toast.LENGTH_SHORT).show()
+            fetchTitulos()
+        }
+    )
     
     private var currentYear = 2026
     private var currentMonth = 2
@@ -92,7 +99,39 @@ class MainActivity : AppCompatActivity() {
                 atualizarResumoTotais()
                 aplicarFiltro()
             } catch (e: Exception) {
-                Toast.makeText(this@MainActivity, "Erro: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "Erro ao carregar: ${e.message}", Toast.LENGTH_LONG).show()
+            } finally {
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun confirmarAlteracaoStatus(titulo: Titulo) {
+        val novoStatus = if (titulo.status.equals("PAGO", true)) "ABERTO" else "PAGO"
+        
+        AlertDialog.Builder(this)
+            .setTitle("Confirmar Alteração")
+            .setMessage("Deseja alterar o status de '${titulo.descricao}' para $novoStatus?")
+            .setPositiveButton("Sim") { _, _ ->
+                toggleStatus(titulo)
+            }
+            .setNegativeButton("Não", null)
+            .show()
+    }
+
+    private fun toggleStatus(titulo: Titulo) {
+        binding.progressBar.visibility = View.VISIBLE
+        lifecycleScope.launch {
+            try {
+                val response = apiService.togglePago(titulo.id)
+                if (response.isSuccessful) {
+                    Toast.makeText(this@MainActivity, "Status atualizado!", Toast.LENGTH_SHORT).show()
+                    fetchTitulos()
+                } else {
+                    Toast.makeText(this@MainActivity, "Erro ao atualizar status", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Erro: ${e.message}", Toast.LENGTH_SHORT).show()
             } finally {
                 binding.progressBar.visibility = View.GONE
             }

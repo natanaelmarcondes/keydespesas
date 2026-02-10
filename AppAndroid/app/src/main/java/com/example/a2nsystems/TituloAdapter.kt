@@ -14,12 +14,13 @@ import java.util.Calendar
 import java.util.Locale
 
 class TituloAdapter(
+    private val onStatusClick: (Titulo) -> Unit,
     private val onLongClick: () -> Unit
 ) : ListAdapter<Titulo, TituloAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemTituloBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding, onLongClick)
+        return ViewHolder(binding, onStatusClick, onLongClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -28,17 +29,24 @@ class TituloAdapter(
 
     class ViewHolder(
         private val binding: ItemTituloBinding,
+        private val onStatusClick: (Titulo) -> Unit,
         private val onLongClick: () -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         
+        private var currentTitulo: Titulo? = null
+
         init {
             binding.root.setOnLongClickListener {
                 onLongClick()
                 true
             }
+            binding.cardStatus.setOnClickListener {
+                currentTitulo?.let { onStatusClick(it) }
+            }
         }
 
         fun bind(titulo: Titulo) {
+            currentTitulo = titulo
             val context = binding.root.context
             binding.tvDescricao.text = titulo.descricao
             binding.tvCategoria.text = titulo.categoriaNome
