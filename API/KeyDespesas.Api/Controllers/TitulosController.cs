@@ -16,7 +16,7 @@ public class TitulosController : ControllerBase
         _db = db;
     }
 
-    // GET /api/titulos?ano=2026&mes=2&tipo=P
+    // GET /titulos?ano=2026&mes=2&tipo=P
     [HttpGet]
     [Produces("application/json")]
     public async Task<ActionResult<List<TituloListItemDto>>> GetByMes(
@@ -59,7 +59,7 @@ public class TitulosController : ControllerBase
         return Ok(lista);
     }
 
-    // GET /api/titulos/resumo-mes?ano=2026&mes=2&tipo=P
+    // GET /titulos/resumo-mes?ano=2026&mes=2&tipo=P
     [HttpGet("resumo-mes")]
     [Produces("application/json")]
     public async Task<ActionResult<TitulosResumoMesDto>> GetResumoMes(
@@ -137,5 +137,24 @@ public class TitulosController : ControllerBase
             QtdeVencido = dados.QtdeVencido,
             QtdeCancelado = dados.QtdeCancelado
         });
+    }
+
+    // PATCH /titulos/123/toggle-pago
+    // Se ABERTO => PAGO | Se PAGO => ABERTO | outros => não altera
+    [HttpPatch("{id:long}/toggle-pago")]
+    public async Task<IActionResult> TogglePago([FromRoute] long id)
+    {
+        var t = await _db.Titulos.FirstOrDefaultAsync(x => x.Id == id);
+
+        if (t is null)
+            return NoContent(); // você pediu sem retorno/validação
+
+        if (t.Status == "ABERTO")
+            t.Status = "PAGO";
+        else if (t.Status == "PAGO")
+            t.Status = "ABERTO";
+
+        await _db.SaveChangesAsync();
+        return NoContent(); // 204
     }
 }
