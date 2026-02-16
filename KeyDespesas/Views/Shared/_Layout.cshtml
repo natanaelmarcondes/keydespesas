@@ -62,17 +62,15 @@
                         <li class="nav-item me-3 text-white small">
                             Usuário: <strong>Administrador</strong>
                         </li>
-
                         <li class="nav-item">
-                            <a class="btn btn-outline-light btn-sm menu-font"
-                               asp-controller="Account"
-                               asp-action="Logout">
-                                Sair
-                            </a>
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-outline-light btn-sm menu-font">
+                                    Sair
+                                </button>
+                            </form>
                         </li>
-
                     </ul>
-
                 </div>
             </div>
         </nav>

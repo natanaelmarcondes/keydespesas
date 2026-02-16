@@ -1,6 +1,7 @@
 ﻿using KeyDespesas.Data;
 using KeyDespesas.Models;
 using KeyDespesas.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using System.Globalization;
 
 namespace KeyDespesas.Controllers
 {
+    [Authorize]
     public class TitulosController : Controller
     {
         private readonly AppDbContext _db;

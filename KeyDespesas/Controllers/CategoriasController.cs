@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using KeyDespesas.Data;
+﻿using KeyDespesas.Data;
 using KeyDespesas.Models;
 using KeyDespesas.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Text;
 
 namespace KeyDespesas.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
         private readonly AppDbContext _db;
