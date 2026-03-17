@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.text.NumberFormat
+import java.util.Calendar
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         }
     )
     
-    private var currentYear = 2026
-    private var currentMonth = 2
+    private var currentYear = Calendar.getInstance().get(Calendar.YEAR)
+    private var currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1
     private var todosTitulos: List<Titulo> = emptyList()
 
     private val apiService by lazy {
@@ -47,9 +48,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Definindo data padrão (pode ser a atual, mantendo 02/2026 conforme solicitado anteriormente)
-        currentYear = 2026
-        currentMonth = 2
+        // Definindo data padrão como o mês atual
+        val calendar = Calendar.getInstance()
+        currentYear = calendar.get(Calendar.YEAR)
+        currentMonth = calendar.get(Calendar.MONTH) + 1
 
         setupRecyclerView()
         setupListeners()
