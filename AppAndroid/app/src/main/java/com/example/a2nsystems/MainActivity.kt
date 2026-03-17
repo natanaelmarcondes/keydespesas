@@ -86,6 +86,14 @@ class MainActivity : AppCompatActivity() {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        binding.tabLayoutStatus.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                aplicarFiltro()
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 
     private fun updatePeriodoText() {
@@ -141,12 +149,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun aplicarFiltro() {
-        val selectedTabPosition = binding.tabLayout.selectedTabPosition
-        val listaFiltrada = when (selectedTabPosition) {
-            1 -> todosTitulos.filter { it.tipo.equals("R", ignoreCase = true) } // Receitas
-            2 -> todosTitulos.filter { it.tipo.equals("P", ignoreCase = true) } // Despesas
-            else -> todosTitulos // Todas
+        val tipoTabPosition = binding.tabLayout.selectedTabPosition
+        val statusTabPosition = binding.tabLayoutStatus.selectedTabPosition
+
+        var listaFiltrada = todosTitulos
+
+        // Filtro por Tipo (Receitas/Despesas)
+        listaFiltrada = when (tipoTabPosition) {
+            1 -> listaFiltrada.filter { it.tipo.equals("R", ignoreCase = true) }
+            2 -> listaFiltrada.filter { it.tipo.equals("P", ignoreCase = true) }
+            else -> listaFiltrada
         }
+
+        // Filtro por Status (Abertos/Pagos)
+        listaFiltrada = when (statusTabPosition) {
+            1 -> listaFiltrada.filter { !it.status.equals("PAGO", ignoreCase = true) } // Abertos
+            2 -> listaFiltrada.filter { it.status.equals("PAGO", ignoreCase = true) } // Pagos
+            else -> listaFiltrada
+        }
+
         adapter.submitList(listaFiltrada)
         
         if (listaFiltrada.isEmpty() && todosTitulos.isNotEmpty()) {
