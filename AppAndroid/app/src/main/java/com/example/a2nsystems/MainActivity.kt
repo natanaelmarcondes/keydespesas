@@ -94,6 +94,16 @@ class MainActivity : AppCompatActivity() {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        binding.btnToggleFilters.setOnClickListener {
+            if (binding.headerContainer.visibility == View.VISIBLE) {
+                binding.headerContainer.visibility = View.GONE
+                binding.btnToggleFilters.text = "Mostrar Filtros"
+            } else {
+                binding.headerContainer.visibility = View.VISIBLE
+                binding.btnToggleFilters.text = "Ocultar Filtros"
+            }
+        }
     }
 
     private fun updatePeriodoText() {
@@ -161,10 +171,10 @@ class MainActivity : AppCompatActivity() {
             else -> listaFiltrada
         }
 
-        // Filtro por Status (Abertos/Pagos)
+        // Filtro por Status (Pagos/Abertos) - Invertido conforme solicitação
         listaFiltrada = when (statusTabPosition) {
-            1 -> listaFiltrada.filter { !it.status.equals("PAGO", ignoreCase = true) } // Abertos
-            2 -> listaFiltrada.filter { it.status.equals("PAGO", ignoreCase = true) } // Pagos
+            1 -> listaFiltrada.filter { it.status.equals("PAGO", ignoreCase = true) } // Pagos
+            2 -> listaFiltrada.filter { !it.status.equals("PAGO", ignoreCase = true) } // Abertos
             else -> listaFiltrada
         }
 
