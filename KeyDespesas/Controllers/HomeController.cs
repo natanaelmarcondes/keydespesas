@@ -1,11 +1,13 @@
 ﻿using KeyDespesas.Data;
 using KeyDespesas.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace KeyDespesas.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly AppDbContext _db;

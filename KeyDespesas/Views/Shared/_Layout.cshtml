@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/css/kpi.theme.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/titulos.theme.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/categorias.theme.css" asp-append-version="true" />
+    <link rel="icon" type="image/png" href="~/favicon.png" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,17 +62,15 @@
                         <li class="nav-item me-3 text-white small">
                             Usuário: <strong>Administrador</strong>
                         </li>
-
                         <li class="nav-item">
-                            <a class="btn btn-outline-light btn-sm menu-font"
-                               asp-controller="Account"
-                               asp-action="Logout">
-                                Sair
-                            </a>
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-outline-light btn-sm menu-font">
+                                    Sair
+                                </button>
+                            </form>
                         </li>
-
                     </ul>
-
                 </div>
             </div>
         </nav>
