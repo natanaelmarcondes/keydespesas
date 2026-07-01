@@ -1,57 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "H:\\KeyDespesas\\KeyDespesas\\",
+  "WorkspaceRootPath": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\viewmodels\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\viewmodels\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:viewmodels\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:views\\titulos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|h:\\keydespesas\\keydespesas\\viewmodels\\titulosvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|d:\\keydespesas\\keydespesas\\keydespesas\\viewmodels\\titulosvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24746E37-3E9B-80F7-7446-06D51B879003}|KeyDespesas.csproj|solutionrelative:viewmodels\\titulosvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -62,17 +62,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Program.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Program.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-16T15:10:56.612Z",
               "EditorCaption": ""
@@ -81,48 +97,45 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T15:09:16.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T15:09:16.862Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Account\\Login.cshtml",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-11T11:08:13.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T11:08:13.338Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAAwGYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T13:49:18.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T13:49:18.709Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -132,61 +145,57 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAD4AAAAAAAAAAAAAwFEAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-06T13:40:07.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T13:40:07.356Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "TitulosController.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
               "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\TitulosController.cs",
               "RelativeToolTip": "Controllers\\TitulosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T17:34:38.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:34:38.935Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "CategoriasController.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriasController.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Controllers\\CategoriasController.cs",
               "RelativeToolTip": "Controllers\\CategoriasController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T17:34:24.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:34:24.653Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\appsettings.json",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\appsettings.json",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-11T11:05:30.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T11:05:30.94Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "DashboardVm.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
               "RelativeDocumentMoniker": "ViewModels\\DashboardVm.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\ViewModels\\DashboardVm.cs",
               "RelativeToolTip": "ViewModels\\DashboardVm.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAxwA8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -196,9 +205,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "site.css",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
               "ViewState": "AgIAAPsAAAAAAAAAAAAmwBYBAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -208,9 +217,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "TitulosVm.cs",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
               "RelativeDocumentMoniker": "ViewModels\\TitulosVm.cs",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\ViewModels\\TitulosVm.cs",
               "RelativeToolTip": "ViewModels\\TitulosVm.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAA2wCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -220,13 +229,31 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Titulos\\Index.cshtml",
-              "ToolTip": "H:\\KeyDespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\Views\\Titulos\\Index.cshtml",
               "RelativeToolTip": "Views\\Titulos\\Index.cshtml",
               "ViewState": "AgIAAEIAAAAAAAAAAAAAwF4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-05T17:28:17.345Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

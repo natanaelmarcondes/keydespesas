@@ -31,8 +31,9 @@ public class AppDbContext : DbContext
 
             e.Property(x => x.IdCategoria).HasColumnName("id_categoria").IsRequired();
             e.HasOne(x => x.Categoria)
-             .WithMany()
-             .HasForeignKey(x => x.IdCategoria);
+                .WithMany()
+                .HasForeignKey(x => x.IdCategoria)
+                .OnDelete(DeleteBehavior.Restrict);
 
             e.Property(x => x.DataEmissao).HasColumnName("data_emissao").HasColumnType("date").IsRequired();
             e.Property(x => x.DataVencimento).HasColumnName("data_vencimento").HasColumnType("date").IsRequired();

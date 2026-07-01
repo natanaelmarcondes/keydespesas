@@ -1,5 +1,7 @@
 package com.example.a2nsystems
 
+import java.io.Serializable
+
 data class Titulo(
     val id: Int,
     val tipo: String,
@@ -10,4 +12,4 @@ data class Titulo(
     val dataVencimento: String,
     val valor: Double,
     val status: String
-)
+) : Serializable

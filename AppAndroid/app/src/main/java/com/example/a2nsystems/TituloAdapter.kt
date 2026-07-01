@@ -15,12 +15,14 @@ import java.util.Locale
 
 class TituloAdapter(
     private val onStatusClick: (Titulo) -> Unit,
+    private val onItemClick: (Titulo) -> Unit,
+    private val onDeleteClick: (Titulo) -> Unit,
     private val onLongClick: () -> Unit
 ) : ListAdapter<Titulo, TituloAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemTituloBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding, onStatusClick, onLongClick)
+        return ViewHolder(binding, onStatusClick, onItemClick, onDeleteClick, onLongClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -30,18 +32,26 @@ class TituloAdapter(
     class ViewHolder(
         private val binding: ItemTituloBinding,
         private val onStatusClick: (Titulo) -> Unit,
+        private val onItemClick: (Titulo) -> Unit,
+        private val onDeleteClick: (Titulo) -> Unit,
         private val onLongClick: () -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         
         private var currentTitulo: Titulo? = null
 
         init {
+            binding.root.setOnClickListener {
+                currentTitulo?.let { onItemClick(it) }
+            }
             binding.root.setOnLongClickListener {
                 onLongClick()
                 true
             }
             binding.cardStatus.setOnClickListener {
                 currentTitulo?.let { onStatusClick(it) }
+            }
+            binding.btnDelete.setOnClickListener {
+                currentTitulo?.let { onDeleteClick(it) }
             }
         }
 
@@ -105,9 +115,9 @@ class TituloAdapter(
             // Formatação de data
             val dataVencParts = dataVencimentoStr.split("-")
             if (dataVencParts.size == 3) {
-                binding.tvVencimento.text = "Vencimento: ${dataVencParts[2]}/${dataVencParts[1]}/${dataVencParts[0]}"
+                binding.tvVencimento.text = "Venc.: ${dataVencParts[2]}/${dataVencParts[1]}/${dataVencParts[0]}"
             } else {
-                binding.tvVencimento.text = "Vencimento: ${titulo.dataVencimento}"
+                binding.tvVencimento.text = "Venc.: ${titulo.dataVencimento}"
             }
         }
     }

@@ -64,21 +64,14 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@android:drawable/ic_menu_myplaces"
-                app:tint="?attr/colorOnSurfaceVariant" />
-
             <TextView
                 android:id="@+id/tvVencimento"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="6dp"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="13sp"
-                tools:text="Vencimento: 06/02/2026" />
+                tools:text="Venc.: 06/02/2026" />
 
             <!-- Card do Status: continua com cor dinâmica via código (verde/vermelho etc.) -->
             <com.google.android.material.card.MaterialCardView
@@ -115,6 +108,38 @@
                         android:textStyle="bold"
                         tools:textColor="@color/bs_success"
                         tools:text="PAGO" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/bs_danger"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EXCLUIR"
+                        android:textColor="@color/bs_danger"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

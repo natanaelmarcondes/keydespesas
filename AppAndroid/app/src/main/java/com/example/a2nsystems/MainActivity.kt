@@ -1,8 +1,10 @@
 package com.example.a2nsystems
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -24,15 +26,28 @@ class MainActivity : AppCompatActivity() {
         onStatusClick = { titulo ->
             confirmarAlteracaoStatus(titulo)
         },
+        onItemClick = { titulo ->
+            val intent = Intent(this, CadastroTituloActivity::class.java)
+            intent.putExtra("TITULO", titulo)
+            cadastroLauncher.launch(intent)
+        },
+        onDeleteClick = { titulo ->
+            confirmarExclusao(titulo)
+        },
         onLongClick = {
-            Toast.makeText(this, "Atualizando dados...", Toast.LENGTH_SHORT).show()
-            fetchTitulos()
+            // Removido o fetch manual no long click, agora usa SwipeRefresh
         }
     )
     
     private var currentYear = Calendar.getInstance().get(Calendar.YEAR)
     private var currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1
     private var todosTitulos: List<Titulo> = emptyList()
+
+    private val cadastroLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            fetchTitulos()
+        }
+    }
 
     private val apiService by lazy {
         Retrofit.Builder()
@@ -65,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        binding.btnRecarregar.setOnClickListener { fetchTitulos() }
+        binding.swipeRefresh.setOnRefreshListener { fetchTitulos() }
 
         binding.btnAnterior.setOnClickListener {
             if (currentMonth == 1) { currentMonth = 12; currentYear-- } else { currentMonth-- }
@@ -96,13 +111,28 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.btnToggleFilters.setOnClickListener {
-            if (binding.headerContainer.visibility == View.VISIBLE) {
-                binding.headerContainer.visibility = View.GONE
+            if (binding.filtersContainer.visibility == View.VISIBLE) {
+                binding.filtersContainer.visibility = View.GONE
                 binding.btnToggleFilters.text = "Mostrar Filtros"
             } else {
-                binding.headerContainer.visibility = View.VISIBLE
+                binding.filtersContainer.visibility = View.VISIBLE
                 binding.btnToggleFilters.text = "Ocultar Filtros"
             }
+        }
+
+        binding.btnToggleTotals.setOnClickListener {
+            if (binding.summaryCard.visibility == View.VISIBLE) {
+                binding.summaryCard.visibility = View.GONE
+                binding.btnToggleTotals.text = "Mostrar Totais"
+            } else {
+                binding.summaryCard.visibility = View.VISIBLE
+                binding.btnToggleTotals.text = "Ocultar Totais"
+            }
+        }
+
+        binding.fabAdd.setOnClickListener {
+            val intent = Intent(this, CadastroTituloActivity::class.java)
+            cadastroLauncher.launch(intent)
         }
     }
 
@@ -112,7 +142,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchTitulos() {
-        binding.progressBar.visibility = View.VISIBLE
+        if (!binding.swipeRefresh.isRefreshing) {
+            binding.progressBar.visibility = View.VISIBLE
+        }
         lifecycleScope.launch {
             try {
                 todosTitulos = apiService.getTitulos(currentYear, currentMonth)
@@ -122,6 +154,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Erro ao carregar: ${e.message}", Toast.LENGTH_LONG).show()
             } finally {
                 binding.progressBar.visibility = View.GONE
+                binding.swipeRefresh.isRefreshing = false
             }
         }
     }
@@ -131,12 +164,42 @@ class MainActivity : AppCompatActivity() {
         
         AlertDialog.Builder(this)
             .setTitle("Confirmar Alteração")
-            .setMessage("Deseja alterar o status de '${titulo.descricao}' para $novoStatus?")
+            .setMessage("Deseja alterar o status para $novoStatus?\n\n${titulo.descricao}")
             .setPositiveButton("Sim") { _, _ ->
                 toggleStatus(titulo)
             }
             .setNegativeButton("Não", null)
             .show()
+    }
+
+    private fun confirmarExclusao(titulo: Titulo) {
+        AlertDialog.Builder(this)
+            .setTitle("Excluir Título")
+            .setMessage("Tem certeza que deseja excluir este registro?\n\n${titulo.descricao}")
+            .setPositiveButton("Sim") { _, _ ->
+                excluirTitulo(titulo)
+            }
+            .setNegativeButton("Não", null)
+            .show()
+    }
+
+    private fun excluirTitulo(titulo: Titulo) {
+        binding.progressBar.visibility = View.VISIBLE
+        lifecycleScope.launch {
+            try {
+                val response = apiService.deleteTitulo(titulo.id)
+                if (response.isSuccessful) {
+                    Toast.makeText(this@MainActivity, "Título excluído!", Toast.LENGTH_SHORT).show()
+                    fetchTitulos()
+                } else {
+                    Toast.makeText(this@MainActivity, "Erro ao excluir", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Erro: ${e.message}", Toast.LENGTH_SHORT).show()
+            } finally {
+                binding.progressBar.visibility = View.GONE
+            }
+        }
     }
 
     private fun toggleStatus(titulo: Titulo) {
@@ -180,9 +243,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter.submitList(listaFiltrada)
         
-        if (listaFiltrada.isEmpty() && todosTitulos.isNotEmpty()) {
-            Toast.makeText(this, "Nenhum registro nesta categoria", Toast.LENGTH_SHORT).show()
-        }
+        binding.emptyState.visibility = if (listaFiltrada.isEmpty()) View.VISIBLE else View.GONE
     }
 
     private fun atualizarResumoTotais() {

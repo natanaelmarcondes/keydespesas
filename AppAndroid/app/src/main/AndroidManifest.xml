@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".CadastroTituloActivity"
+            android:label="Novo Título" />
+
     </application>
 
 </manifest>

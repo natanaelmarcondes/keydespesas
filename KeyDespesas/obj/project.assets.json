@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "Microsoft.EntityFrameworkCore/9.0.0": {
@@ -198,23 +198,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\natanael\\.nuget\\packages\\": {},
+    "C:\\Users\\Natanael\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\KeyDespesas\\KeyDespesas\\KeyDespesas.csproj",
+      "projectUniqueName": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\KeyDespesas.csproj",
       "projectName": "KeyDespesas",
-      "projectPath": "H:\\KeyDespesas\\KeyDespesas\\KeyDespesas.csproj",
-      "packagesPath": "C:\\Users\\natanael\\.nuget\\packages\\",
-      "outputPath": "H:\\KeyDespesas\\KeyDespesas\\obj\\",
+      "projectPath": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\KeyDespesas.csproj",
+      "packagesPath": "C:\\Users\\Natanael\\.nuget\\packages\\",
+      "outputPath": "D:\\KeyDespesas\\keydespesas\\KeyDespesas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\natanael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Natanael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -223,11 +223,11 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -242,10 +242,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Pomelo.EntityFrameworkCore.MySql": {
@@ -272,7 +273,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
