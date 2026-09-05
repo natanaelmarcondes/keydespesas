@@ -34,7 +34,8 @@
             android:insetBottom="0dp"
             android:text="&lt;"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:backgroundTint="@color/orange_primary"
             app:strokeColor="@color/orange_primary" />
 
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold"
             tools:text="Fevereiro / 2026" />
@@ -60,7 +61,8 @@
             android:insetBottom="0dp"
             android:text="&gt;"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:backgroundTint="@color/orange_primary"
             app:strokeColor="@color/orange_primary" />
     </LinearLayout>

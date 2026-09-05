@@ -2,7 +2,9 @@ package com.example.a2nsystems
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -162,7 +164,7 @@ class MainActivity : AppCompatActivity() {
     private fun confirmarAlteracaoStatus(titulo: Titulo) {
         val novoStatus = if (titulo.status.equals("PAGO", true)) "ABERTO" else "PAGO"
         
-        MaterialAlertDialogBuilder(this)
+        val dialog = MaterialAlertDialogBuilder(this)
             .setTitle("Confirmar Alteração")
             .setIcon(android.R.drawable.ic_menu_help)
             .setMessage("Deseja alterar o status para $novoStatus?\n\n${titulo.descricao}")
@@ -171,10 +173,13 @@ class MainActivity : AppCompatActivity() {
             }
             .setNegativeButton("Não", null)
             .show()
+
+        // Centraliza o texto da mensagem no diálogo
+        dialog.findViewById<TextView>(android.R.id.message)?.gravity = Gravity.CENTER
     }
 
     private fun confirmarExclusao(titulo: Titulo) {
-        MaterialAlertDialogBuilder(this)
+        val dialog = MaterialAlertDialogBuilder(this)
             .setTitle("Excluir Título")
             .setIcon(android.R.drawable.ic_menu_help)
             .setMessage("Tem certeza que deseja excluir este registro?\n\n${titulo.descricao}")
@@ -183,6 +188,8 @@ class MainActivity : AppCompatActivity() {
             }
             .setNegativeButton("Não", null)
             .show()
+
+        dialog.findViewById<TextView>(android.R.id.message)?.gravity = Gravity.CENTER
     }
 
     private fun excluirTitulo(titulo: Titulo) {
@@ -210,7 +217,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val response = apiService.togglePago(titulo.id)
                 if (response.isSuccessful) {
-                    Toast.makeText(this@MainActivity, "Status atualizado!", Toast.LENGTH_SHORT).show()
+                    showCustomToast("Status atualizado!")
                     fetchTitulos()
                 } else {
                     Toast.makeText(this@MainActivity, "Erro ao atualizar status", Toast.LENGTH_SHORT).show()
@@ -246,6 +253,19 @@ class MainActivity : AppCompatActivity() {
         adapter.submitList(listaFiltrada)
         
         binding.emptyState.visibility = if (listaFiltrada.isEmpty()) View.VISIBLE else View.GONE
+    }
+
+    private fun showCustomToast(message: String) {
+        val layout = layoutInflater.inflate(R.layout.layout_custom_toast, null)
+        val text: TextView = layout.findViewById(R.id.tvToast)
+        text.text = message
+        
+        with(Toast(applicationContext)) {
+            setGravity(Gravity.CENTER, 0, 0)
+            duration = Toast.LENGTH_SHORT
+            view = layout
+            show()
+        }
     }
 
     private fun atualizarResumoTotais() {
