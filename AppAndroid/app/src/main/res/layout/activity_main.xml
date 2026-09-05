@@ -378,6 +378,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:visibility="gone"
+        android:padding="24dp"
         app:layout_constraintTop_toBottomOf="@id/toggleButtonsContainer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -388,15 +389,18 @@
             android:layout_height="wrap_content"
             android:text="Nenhum registro encontrado"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arraste para baixo para atualizar"
+            android:text="Verifique se há filtros ativos para este período\nou arraste para baixo para atualizar."
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="12sp"
-            android:layout_marginTop="8dp" />
+            android:textSize="14sp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:alpha="0.8" />
     </LinearLayout>
 
     <ProgressBar
