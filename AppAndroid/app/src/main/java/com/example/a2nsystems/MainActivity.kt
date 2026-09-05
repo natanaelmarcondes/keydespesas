@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -162,8 +162,9 @@ class MainActivity : AppCompatActivity() {
     private fun confirmarAlteracaoStatus(titulo: Titulo) {
         val novoStatus = if (titulo.status.equals("PAGO", true)) "ABERTO" else "PAGO"
         
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
             .setTitle("Confirmar Alteração")
+            .setIcon(android.R.drawable.ic_menu_help)
             .setMessage("Deseja alterar o status para $novoStatus?\n\n${titulo.descricao}")
             .setPositiveButton("Sim") { _, _ ->
                 toggleStatus(titulo)
@@ -173,8 +174,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun confirmarExclusao(titulo: Titulo) {
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
             .setTitle("Excluir Título")
+            .setIcon(android.R.drawable.ic_menu_help)
             .setMessage("Tem certeza que deseja excluir este registro?\n\n${titulo.descricao}")
             .setPositiveButton("Sim") { _, _ ->
                 excluirTitulo(titulo)
