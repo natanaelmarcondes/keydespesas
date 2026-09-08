@@ -1,0 +1,8 @@
+{
+  "/api/**": {
+    "target": "https://api.keysolution.com.br",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api": "" }
+  }
+}

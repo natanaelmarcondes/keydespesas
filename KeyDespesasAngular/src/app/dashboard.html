@@ -1,0 +1,393 @@
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/"
+      ><span class="brand-symbol" aria-hidden="true">K</span> Key<span>Despesas</span></a
+    >
+    <nav aria-label="Menu principal">
+      <button
+        [class.active]="page() === 'titles'"
+        (click)="page.set('titles')"
+        [attr.aria-current]="page() === 'titles' ? 'page' : null"
+      >
+        <span aria-hidden="true">&#9638;</span> Visão geral
+      </button>
+      <button
+        [class.active]="page() === 'categories'"
+        (click)="page.set('categories')"
+        [attr.aria-current]="page() === 'categories' ? 'page' : null"
+      >
+        <span aria-hidden="true">&#9636;</span> Categorias
+      </button>
+    </nav>
+    <div class="sidebar-user">
+      <span class="avatar">NM</span>
+      <div><strong>Natanael</strong><small>Conta pessoal</small></div>
+    </div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar">
+      <span
+        >Meu financeiro
+        <span class="breadcrumb"
+          >/ {{ page() === 'titles' ? 'Visão geral' : 'Categorias' }}</span
+        ></span
+      >
+      <button
+        class="logout-button"
+        aria-label="Sair da conta"
+        title="Sair da conta"
+        (click)="logout()"
+      >
+        <svg
+          aria-hidden="true"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4M14 8l4 4-4 4M8 12h12" />
+        </svg>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">CONTROLE FINANCEIRO</span>
+          @if (page() === 'categories') {
+            <h1>Tudo no seu lugar.</h1>
+            <p>Consulte as categorias que organizam suas despesas e receitas.</p>
+          }
+        </div>
+        @if (page() === 'titles') {
+          <div class="heading-actions">
+            <button
+              type="button"
+              (click)="openMonthCopy()"
+              [disabled]="busy() || loading() || !titles().length || period() === '2100-12'"
+            >
+              Copiar mês
+            </button>
+            <button
+              class="primary"
+              (click)="openEditor()"
+              [disabled]="busy() || !categories().length"
+            >
+              <span aria-hidden="true">+</span> Novo lançamento
+            </button>
+          </div>
+        }
+      </div>
+      @if (notice()) {
+        <div class="success-banner" role="status">
+          {{ notice() }}<button aria-label="Dispensar mensagem" (click)="notice.set('')">×</button>
+        </div>
+      }
+      @if (categoryError()) {
+        <div class="error" role="alert">
+          {{ categoryError() }} <button (click)="loadCategories()">Tentar novamente</button>
+        </div>
+      }
+      @if (page() === 'titles') {
+        <div class="period-row">
+          <div class="period-selector">
+            <button aria-label="Mês anterior" (click)="stepMonth(-1)">‹</button
+            ><label for="period" class="sr-only">Mês de referência</label
+            ><input
+              id="period"
+              #periodInput
+              type="month"
+              min="2000-01"
+              max="2100-12"
+              [value]="period()"
+              (change)="changePeriod(periodInput.value)"
+            /><button aria-label="Próximo mês" (click)="stepMonth(1)">›</button>
+          </div>
+          <button class="refresh-button" (click)="refresh()" [disabled]="loading() || busy()">
+            <span aria-hidden="true">&#8635;</span> Atualizar
+          </button>
+        </div>
+        @if (error()) {
+          <p class="error" role="alert">{{ error() }}</p>
+        }
+        <section class="summary-grid" aria-label="Resumo mensal" [attr.aria-busy]="loading()">
+          @for (card of summaryCards(); track card.label) {
+            <article class="summary-card">
+              <div>
+                <span>{{ card.label }}</span>
+                <span class="metric-icon" [class]="card.tone" aria-hidden="true">{{
+                  card.icon
+                }}</span>
+              </div>
+              <strong>{{
+                loading() || (error() && !titles().length)
+                  ? '—'
+                  : (card.total | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR')
+              }}</strong>
+              <small>{{ card.description }}</small>
+            </article>
+          }
+          <article class="summary-card balance">
+            <div>
+              <span>Saldo previsto</span><span class="metric-icon" aria-hidden="true">&#8776;</span>
+            </div>
+            <strong>{{
+              loading() || (error() && !titles().length)
+                ? '—'
+                : (balance() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR')
+            }}</strong>
+            <small>Receitas menos despesas</small>
+          </article>
+        </section>
+        @if (summaryError()) {
+          <p class="error" role="alert">{{ summaryError() }}</p>
+        }
+        <section class="panel transactions" aria-labelledby="transactions-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="transactions-title">
+                Lançamentos <span class="count">{{ filtered().length }}</span>
+              </h2>
+              <p>Todos os detalhes das suas movimentações.</p>
+            </div>
+            <button (click)="exportCsv()" [disabled]="loading() || !filtered().length">
+              &#8595; Exportar CSV
+            </button>
+          </div>
+          <div class="filters">
+            <div class="search-field">
+              <span aria-hidden="true">&#9906;</span
+              ><input
+                #searchInput
+                aria-label="Buscar por descrição ou categoria"
+                placeholder="Buscar lançamento..."
+                [value]="query()"
+                (input)="query.set(searchInput.value)"
+              />
+            </div>
+            <select
+              #typeInput
+              aria-label="Filtrar por tipo"
+              [value]="type()"
+              (change)="type.set(typeInput.value)"
+            >
+              <option value="">Todos os tipos</option>
+              <option value="P">Despesas</option>
+              <option value="R">Receitas</option></select
+            ><select
+              #statusInput
+              aria-label="Filtrar por situação"
+              [value]="status()"
+              (change)="status.set(statusInput.value)"
+            >
+              <option value="">Todas as situações</option>
+              <option value="ABERTO">Em aberto</option>
+              <option value="PAGO">Pago</option>
+              <option value="VENCIDO">Vencido</option>
+              <option value="CANCELADO">Cancelado</option>
+            </select>
+          </div>
+          <ag-grid-angular
+            #titlesGrid
+            [rowClassRules]="titleRowClassRules"
+            aria-label="Lançamentos financeiros"
+            [theme]="theme"
+            [rowData]="filtered()"
+            [columnDefs]="columns"
+            [defaultColDef]="defaultColDef"
+            [context]="actions"
+            [loading]="loading()"
+            [localeText]="localeText"
+            [pagination]="true"
+            [paginationPageSize]="50"
+            [paginationPageSizeSelector]="[10, 20, 50]"
+            [ensureDomOrder]="true"
+          />
+        </section>
+        <div class="insights-grid">
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Despesas por categoria</h2>
+                <p>Entenda para onde vai seu dinheiro.</p>
+              </div>
+              <span class="subtle-icon" aria-hidden="true">&#9684;</span>
+            </div>
+            <div class="category-bars">
+              @for (item of distribution(); track item.name) {
+                <div class="category-bar">
+                  <div>
+                    <span>{{ item.name }}</span
+                    ><strong>{{
+                      item.value | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR'
+                    }}</strong>
+                  </div>
+                  <div class="bar-track"><div [style.width.%]="item.percent"></div></div>
+                </div>
+              } @empty {
+                <p class="empty-state">
+                  {{ loading() ? 'Carregando categorias…' : 'Nenhuma despesa neste período.' }}
+                </p>
+              }
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Vencimentos em aberto</h2>
+                <p>As primeiras despesas da sua lista.</p>
+              </div>
+              <span class="subtle-icon" aria-hidden="true">&#9638;</span>
+            </div>
+            <div class="upcoming-list">
+              @for (title of upcoming(); track title.id) {
+                <div class="upcoming-item">
+                  <span class="date-tile"
+                    >{{ title.dataVencimento | date: 'dd'
+                    }}<small>{{ title.dataVencimento | date: 'MMM' : '' : 'pt-BR' }}</small></span
+                  >
+                  <div>
+                    <strong>{{ title.descricao }}</strong
+                    ><small>{{ title.categoriaNome }}</small>
+                  </div>
+                  <span class="upcoming-value">{{
+                    title.valor | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR'
+                  }}</span>
+                </div>
+              } @empty {
+                <p class="empty-state">
+                  {{
+                    loading()
+                      ? 'Carregando vencimentos…'
+                      : 'Nenhuma despesa em aberto neste período.'
+                  }}
+                </p>
+              }
+            </div>
+          </section>
+        </div>
+      } @else {
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <h2>
+                Suas categorias <span class="count">{{ categories().length }}</span>
+              </h2>
+              <p>Categorias cadastradas na sua conta.</p>
+            </div>
+            <button (click)="loadCategories()" [disabled]="categoriesLoading()">
+              &#8635; Atualizar
+            </button>
+          </div>
+          <div class="filters">
+            <div class="search-field">
+              <span aria-hidden="true">&#9906;</span>
+              <input
+                #categorySearch
+                aria-label="Buscar categoria por código ou nome"
+                placeholder="Buscar categoria..."
+                [value]="categoryQuery()"
+                (input)="categoryQuery.set(categorySearch.value)"
+              />
+            </div>
+          </div>
+          <ag-grid-angular
+            aria-label="Categorias cadastradas"
+            [style.height.px]="635"
+            [style.display]="'block'"
+            [theme]="theme"
+            [rowData]="categories()"
+            [columnDefs]="categoryColumns"
+            [defaultColDef]="categoryDefaultColDef"
+            [context]="categoryActions"
+            [quickFilterText]="categoryQuery()"
+            [loading]="categoriesLoading()"
+            [localeText]="categoryLocaleText"
+            [pagination]="true"
+            [paginationPageSize]="50"
+            [paginationPageSizeSelector]="[10, 20, 50]"
+            [ensureDomOrder]="true"
+          />
+        </section>
+      }
+      <footer class="page-footer">
+        <span>KeyDespesas</span> Clareza para suas finanças, espaço para seus planos.
+      </footer>
+    </main>
+  </div>
+</div>
+<dialog
+  #monthCopyDialog
+  aria-labelledby="copy-month-title"
+  (cancel)="busy() ? $event.preventDefault() : null"
+>
+  <app-copy-month
+    (busyChange)="busy.set($event)"
+    (cancel)="closeMonthCopy()"
+    (finished)="showCopiedMonth($event)"
+  />
+</dialog>
+<dialog
+  #editorDialog
+  aria-labelledby="editor-title"
+  (cancel)="busy() ? $event.preventDefault() : null"
+>
+  <app-title-editor
+    [categories]="categories()"
+    [busy]="busy()"
+    [error]="modalError()"
+    (saved)="save($event)"
+    (cancel)="closeEditor()"
+  />
+</dialog>
+<dialog
+  #deleteDialog
+  aria-labelledby="delete-title"
+  (cancel)="busy() ? $event.preventDefault() : null"
+>
+  <div class="modal-heading"><h2 id="delete-title">Excluir lançamento?</h2></div>
+  <p>
+    O lançamento <strong>{{ pendingDelete()?.descricao }}</strong> será excluído permanentemente.
+  </p>
+  @if (modalError()) {
+    <p class="error" role="alert">{{ modalError() }}</p>
+  }
+  <div class="modal-footer">
+    <button autofocus (click)="closeDelete()" [disabled]="busy()">Cancelar</button
+    ><button class="danger" (click)="remove()" [disabled]="busy()">
+      {{ busy() ? 'Excluindo…' : 'Excluir lançamento' }}
+    </button>
+  </div>
+</dialog>
+<dialog #categoryDialog aria-labelledby="category-title">
+  <div class="modal-heading">
+    <h2 id="category-title">Detalhes da categoria</h2>
+    <button autofocus aria-label="Fechar detalhes" (click)="categoryDialog.close()">×</button>
+  </div>
+  @if (categoryLoading()) {
+    <p role="status">Carregando…</p>
+  }
+  @if (selectedCategory(); as category) {
+    <dl>
+      <dt>Nome</dt>
+      <dd>{{ category.nome }}</dd>
+      <dt>Código</dt>
+      <dd>{{ category.id }}</dd>
+    </dl>
+  }
+  @if (modalError()) {
+    <p class="error" role="alert">{{ modalError() }}</p>
+  }
+</dialog>
+<dialog #copyDialog aria-labelledby="copy-title" (cancel)="busy() ? $event.preventDefault() : null">
+  <app-copy-expense
+    [busy]="busy()"
+    [error]="modalError()"
+    (saved)="copyExpense($event)"
+    (cancel)="closeCopy()"
+  />
+</dialog>
