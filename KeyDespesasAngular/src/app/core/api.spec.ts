@@ -61,4 +61,22 @@ describe('API contract', () => {
     api.categoria(15).subscribe();
     http.expectOne(environment.apiUrl + '/categorias/15').flush({ id: 15, nome: 'Energia' });
   });
+  it('uses the category endpoints with the name DTO', () => {
+    api.criarCategoria('Mercado').subscribe();
+    const create = http.expectOne(environment.apiUrl + '/categorias');
+    expect(create.request.method).toBe('POST');
+    expect(create.request.body).toEqual({ nome: 'Mercado' });
+    create.flush({ id: 16, nome: 'Mercado' });
+
+    api.editarCategoria(16, 'Supermercado').subscribe();
+    const edit = http.expectOne(environment.apiUrl + '/categorias/16');
+    expect(edit.request.method).toBe('PUT');
+    expect(edit.request.body).toEqual({ nome: 'Supermercado' });
+    edit.flush({ id: 16, nome: 'Supermercado' });
+
+    api.excluirCategoria(16).subscribe();
+    const remove = http.expectOne(environment.apiUrl + '/categorias/16');
+    expect(remove.request.method).toBe('DELETE');
+    remove.flush(null, { status: 204, statusText: 'No Content' });
+  });
 });

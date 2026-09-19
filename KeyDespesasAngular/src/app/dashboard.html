@@ -63,6 +63,9 @@
             <p>Consulte as categorias que organizam suas despesas e receitas.</p>
           }
         </div>
+        @if (page() === 'categories') {
+          <button class="primary" type="button" (click)="openNewCategory()">+ Adicionar categoria</button>
+        }
         @if (page() === 'titles') {
           <div class="heading-actions">
             <button
@@ -360,6 +363,36 @@
     <button autofocus (click)="closeDelete()" [disabled]="busy()">Cancelar</button
     ><button class="danger" (click)="remove()" [disabled]="busy()">
       {{ busy() ? 'Excluindo…' : 'Excluir lançamento' }}
+    </button>
+  </div>
+</dialog>
+<dialog #newCategoryDialog aria-labelledby="new-category-title" (cancel)="busy() ? $event.preventDefault() : null">
+  <div class="modal-heading"><h2 id="new-category-title">{{ editingCategory() ? 'Editar categoria' : 'Adicionar categoria' }}</h2></div>
+  <form (submit)="saveCategory($event)">
+    <div class="form-grid">
+      <label class="full" for="new-category-name">Nome da categoria
+        <input #newCategoryInput id="new-category-name" name="nome" required maxlength="80"
+          [value]="newCategoryName()" (input)="updateNewCategoryName(newCategoryInput)"
+          [disabled]="busy()" />
+      </label>
+    </div>
+    @if (categorySaveError()) { <p class="error" role="alert">{{ categorySaveError() }}</p> }
+    <div class="modal-footer">
+      <button type="button" (click)="closeNewCategory()" [disabled]="busy()">Cancelar</button>
+      <button type="submit" class="primary" [disabled]="busy() || !newCategoryName().trim()">
+        {{ busy() ? 'Salvando…' : editingCategory() ? 'Salvar alterações' : 'Cadastrar categoria' }}
+      </button>
+    </div>
+  </form>
+</dialog>
+<dialog #categoryDeleteDialog aria-labelledby="category-delete-title" (cancel)="busy() ? $event.preventDefault() : null">
+  <div class="modal-heading"><h2 id="category-delete-title">Excluir categoria?</h2></div>
+  <p>A categoria <strong>{{ pendingCategoryDelete()?.nome }}</strong> será excluída permanentemente.</p>
+  @if (categorySaveError()) { <p class="error" role="alert">{{ categorySaveError() }}</p> }
+  <div class="modal-footer">
+    <button type="button" autofocus (click)="closeCategoryDelete()" [disabled]="busy()">Cancelar</button>
+    <button type="button" class="danger" (click)="deleteCategory()" [disabled]="busy()">
+      {{ busy() ? 'Excluindo…' : 'Excluir categoria' }}
     </button>
   </div>
 </dialog>

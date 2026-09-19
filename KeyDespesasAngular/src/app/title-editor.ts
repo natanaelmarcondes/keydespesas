@@ -30,7 +30,10 @@ export function localDate(date = new Date()): string {
       <label class="full"
         >Descrição<input
           autofocus
+          #descriptionInput
           [formField]="fields.descricao"
+          (input)="uppercaseDescription(descriptionInput)"
+          style="text-transform: uppercase"
           placeholder="Ex.: Conta de energia"
       /></label>
       <label
@@ -109,7 +112,7 @@ export class TitleEditor {
     this.model.set(
       title
         ? {
-            descricao: title.descricao,
+            descricao: title.descricao.toLocaleUpperCase('pt-BR'),
             tipo: title.tipo,
             valor: title.valor,
             idCategoria: String(title.idCategoria),
@@ -128,6 +131,11 @@ export class TitleEditor {
           },
     );
   }
+  uppercaseDescription(input: HTMLInputElement): void {
+    const value = input.value.toLocaleUpperCase('pt-BR');
+    input.value = value;
+    this.model.update((current) => ({ ...current, descricao: value }));
+  }
   save(event: Event): void {
     event.preventDefault();
     if (this.busy()) return;
@@ -137,7 +145,7 @@ export class TitleEditor {
     }
     this.saved.emit({
       ...this.model(),
-      descricao: this.model().descricao.trim(),
+      descricao: this.model().descricao.trim().toLocaleUpperCase('pt-BR'),
       idCategoria: Number(this.model().idCategoria),
     });
   }

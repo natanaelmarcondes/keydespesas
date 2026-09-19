@@ -43,6 +43,15 @@ export class Api {
   categoria(id: number) {
     return this.http.get<Categoria>(this.base + '/categorias/' + id);
   }
+  criarCategoria(nome: string) {
+    return this.http.post<Categoria>(this.base + '/categorias', { nome });
+  }
+  editarCategoria(id: number, nome: string) {
+    return this.http.put<Categoria>(this.base + '/categorias/' + id, { nome });
+  }
+  excluirCategoria(id: number) {
+    return this.http.delete<void>(this.base + '/categorias/' + id);
+  }
   criar(data: TituloInput) {
     return this.http.post(this.base + '/Titulos', data);
   }

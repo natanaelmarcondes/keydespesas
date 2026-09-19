@@ -5,6 +5,9 @@ import { Categoria } from './core/api';
 
 export interface CategoryActions {
   details: (category: Categoria) => void;
+  edit: (category: Categoria) => void;
+  remove: (category: Categoria) => void;
+  busy: () => boolean;
 }
 
 @Component({
@@ -18,6 +21,10 @@ export interface CategoryActions {
       >
         Ver detalhes
       </button>
+      <button type="button" (click)="actions?.edit(item)" [disabled]="actions?.busy()"
+        [attr.aria-label]="'Editar ' + item.nome">Editar</button>
+      <button type="button" class="danger-text" (click)="actions?.remove(item)"
+        [disabled]="actions?.busy()" [attr.aria-label]="'Excluir ' + item.nome">Excluir</button>
     </div>
   }`,
 })

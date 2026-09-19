@@ -8,6 +8,7 @@ import {
   DestroyRef,
 } from '@angular/core';
 import { CurrencyPipe, DatePipe } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Subject, switchMap, forkJoin, catchError, of } from 'rxjs';
@@ -58,6 +59,10 @@ export class Dashboard {
   readonly page = signal<'titles' | 'categories'>('titles');
   readonly selectedCategory = signal<Categoria | null>(null);
   readonly categoryLoading = signal(false);
+  readonly newCategoryName = signal('');
+  readonly editingCategory = signal<Categoria | null>(null);
+  readonly pendingCategoryDelete = signal<Categoria | null>(null);
+  readonly categorySaveError = signal('');
   readonly pendingDelete = signal<Titulo | null>(null);
   readonly editor = viewChild.required(TitleEditor);
   readonly copyEditor = viewChild.required(CopyExpense);
@@ -67,6 +72,9 @@ export class Dashboard {
   readonly editorDialog = viewChild.required<ElementRef<HTMLDialogElement>>('editorDialog');
   readonly deleteDialog = viewChild.required<ElementRef<HTMLDialogElement>>('deleteDialog');
   readonly categoryDialog = viewChild.required<ElementRef<HTMLDialogElement>>('categoryDialog');
+  readonly newCategoryDialog = viewChild.required<ElementRef<HTMLDialogElement>>('newCategoryDialog');
+  readonly categoryDeleteDialog = viewChild.required<ElementRef<HTMLDialogElement>>('categoryDeleteDialog');
+  readonly newCategoryInput = viewChild.required<ElementRef<HTMLInputElement>>('newCategoryInput');
   readonly grid = viewChild<AgGridAngular<Titulo>>('titlesGrid');
   readonly monthLabel = computed(() =>
     new Date(this.period() + '-01T12:00:00').toLocaleDateString('pt-BR', {
@@ -219,13 +227,18 @@ export class Dashboard {
     },
     {
       headerName: 'Ações',
-      width: 150,
+      width: 250,
       sortable: false,
       cellRenderer: CategoryGridActions,
       suppressKeyboardEvent: ({ event }) => navigateActionButtons(event),
     },
   ];
-  readonly categoryActions: CategoryActions = { details: (category) => this.details(category) };
+  readonly categoryActions: CategoryActions = {
+    details: (category) => this.details(category),
+    edit: (category) => this.openEditCategory(category),
+    remove: (category) => this.askCategoryDelete(category),
+    busy: () => this.busy(),
+  };
   readonly columns: ColDef<Titulo>[] = [
     {
       field: 'descricao',
@@ -511,6 +524,83 @@ export class Dashboard {
           this.categoryLoading.set(false);
         },
       });
+  }
+  openNewCategory(): void {
+    this.editingCategory.set(null);
+    this.newCategoryName.set('');
+    this.categorySaveError.set('');
+    this.newCategoryDialog().nativeElement.showModal();
+    this.newCategoryInput().nativeElement.focus();
+  }
+  openEditCategory(category: Categoria): void {
+    this.editingCategory.set(category);
+    this.newCategoryName.set(category.nome.toLocaleUpperCase('pt-BR').replace(/[^\p{L}\s]/gu, ''));
+    this.categorySaveError.set('');
+    this.newCategoryDialog().nativeElement.showModal();
+    this.newCategoryInput().nativeElement.focus();
+  }
+  closeNewCategory(): void {
+    if (!this.busy()) this.newCategoryDialog().nativeElement.close();
+  }
+  updateNewCategoryName(input: HTMLInputElement): void {
+    const value = input.value.toLocaleUpperCase('pt-BR').replace(/[^\p{L}\s]/gu, '');
+    input.value = value;
+    this.newCategoryName.set(value);
+  }
+  saveCategory(event: Event): void {
+    event.preventDefault();
+    const nome = this.newCategoryName().trim();
+    if (this.busy() || !nome || nome.length > 80) return;
+    this.busy.set(true);
+    this.categorySaveError.set('');
+    const editing = this.editingCategory();
+    const request = editing ? this.api.editarCategoria(editing.id, nome) : this.api.criarCategoria(nome);
+    request.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: () => {
+        this.busy.set(false);
+        this.closeNewCategory();
+        this.notice.set(editing ? 'Categoria atualizada com sucesso.' : 'Categoria cadastrada com sucesso.');
+        this.loadCategories();
+        if (editing) this.refresh();
+      },
+      error: (response: HttpErrorResponse) => {
+        this.busy.set(false);
+        this.categorySaveError.set(this.categoryApiError(response, 'Não foi possível salvar a categoria. Confira o nome e tente novamente.'));
+      },
+    });
+  }
+  askCategoryDelete(category: Categoria): void {
+    this.pendingCategoryDelete.set(category);
+    this.categorySaveError.set('');
+    this.categoryDeleteDialog().nativeElement.showModal();
+  }
+  closeCategoryDelete(): void {
+    if (this.busy()) return;
+    this.categoryDeleteDialog().nativeElement.close();
+    this.pendingCategoryDelete.set(null);
+  }
+  deleteCategory(): void {
+    const category = this.pendingCategoryDelete();
+    if (!category || this.busy()) return;
+    this.busy.set(true);
+    this.categorySaveError.set('');
+    this.api.excluirCategoria(category.id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: () => {
+        this.busy.set(false);
+        this.closeCategoryDelete();
+        this.notice.set('Categoria excluída com sucesso.');
+        this.loadCategories();
+      },
+      error: (response: HttpErrorResponse) => {
+        this.busy.set(false);
+        this.categorySaveError.set(this.categoryApiError(response, 'Não foi possível excluir a categoria.'));
+      },
+    });
+  }
+  private categoryApiError(response: HttpErrorResponse, fallback: string): string {
+    const body: unknown = response.error;
+    return body && typeof body === 'object' && 'mensagem' in body && typeof body.mensagem === 'string'
+      ? body.mensagem : fallback;
   }
   exportCsv(): void {
     this.grid()?.api.exportDataAsCsv({

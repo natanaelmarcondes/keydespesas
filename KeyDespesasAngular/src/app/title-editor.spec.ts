@@ -30,7 +30,7 @@ describe('Title editor', () => {
     await fixture.whenStable();
     editor.save(new Event('submit'));
     expect(save).toHaveBeenCalledWith({
-      descricao: 'Energia',
+      descricao: 'ENERGIA',
       tipo: 'P',
       valor: 100.5,
       idCategoria: 15,
@@ -38,6 +38,16 @@ describe('Title editor', () => {
       dataVencimento: '2026-09-20',
       status: 'ABERTO',
     });
+  });
+  it('converts typed descriptions to uppercase', async () => {
+    const fixture = TestBed.createComponent(TitleEditor);
+    fixture.componentRef.setInput('categories', []);
+    await fixture.whenStable();
+    const input = fixture.nativeElement.querySelector('input[autofocus]') as HTMLInputElement;
+    input.value = 'Cartão de crédito';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(input.value).toBe('CARTÃO DE CRÉDITO');
+    expect(fixture.componentInstance.model().descricao).toBe('CARTÃO DE CRÉDITO');
   });
   it('resets editing state and enforces the 150-character API limit', async () => {
     const fixture = TestBed.createComponent(TitleEditor);
