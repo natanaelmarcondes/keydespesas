@@ -50,6 +50,9 @@
             android:textSize="22sp"
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             tools:text="Fevereiro / 2026" />
 
         <com.google.android.material.button.MaterialButton
@@ -421,16 +424,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAdd"
+    <LinearLayout
+        android:id="@+id/bottomActionsBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:contentDescription="Novo Título"
-        app:srcCompat="@drawable/ic_add_custom"
-        app:backgroundTint="@color/orange_primary"
-        app:tint="@color/white"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Sair"
+            app:srcCompat="@drawable/ic_logout"
+            app:backgroundTint="@color/bs_danger"
+            app:tint="@color/white"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAjuda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Ajuda"
+            app:srcCompat="@drawable/ic_help_custom"
+            app:backgroundTint="@color/button_help"
+            app:tint="@color/white"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCategorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Categorias"
+            app:srcCompat="@drawable/ic_category"
+            app:backgroundTint="@color/button_categories"
+            app:tint="@color/white"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Novo Título"
+            app:srcCompat="@drawable/ic_add_document"
+            app:backgroundTint="@color/orange_primary"
+            app:tint="@color/white" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

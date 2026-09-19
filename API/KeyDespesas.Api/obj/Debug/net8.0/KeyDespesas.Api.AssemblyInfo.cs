@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KeyDespesas.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b24c6004b15db09368f34705a04d8fcd61ace376")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f9c23b4e6da0c023229f1b4a980b7dc5f856892")]
 [assembly: System.Reflection.AssemblyProductAttribute("KeyDespesas.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KeyDespesas.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

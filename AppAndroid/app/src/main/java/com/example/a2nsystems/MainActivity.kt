@@ -132,9 +132,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnCategorias.setOnClickListener {
+            startActivity(Intent(this, CategoriasActivity::class.java))
+        }
+
+        binding.btnAjuda.setOnClickListener {
+            startActivity(Intent(this, DeveloperActivity::class.java))
+        }
+
+        binding.tvPeriodo.setOnClickListener {
+            startActivity(Intent(this, CategoriasActivity::class.java))
+        }
+
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this, CadastroTituloActivity::class.java)
             cadastroLauncher.launch(intent)
+        }
+
+        binding.btnSair.setOnClickListener {
+            finishAffinity()
         }
     }
 

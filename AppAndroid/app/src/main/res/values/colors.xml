@@ -21,4 +21,6 @@
     <color name="bs_danger">#dc3545</color>
     <color name="bs_dark">#212529</color>
     <color name="bs_gray_600">#6c757d</color>
+    <color name="button_help">#2196F3</color>
+    <color name="button_categories">#009688</color>
 </resources>

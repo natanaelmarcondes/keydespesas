@@ -51,4 +51,20 @@ interface ApiService {
     suspend fun deleteTitulo(
         @Path("id") id: Int
     ): Response<Unit>
+
+    @POST("categorias")
+    suspend fun createCategoria(
+        @Body categoria: CategoriaRequest
+    ): Response<Categoria>
+
+    @PUT("categorias/{id}")
+    suspend fun updateCategoria(
+        @Path("id") id: Int,
+        @Body categoria: CategoriaRequest
+    ): Response<Categoria>
+
+    @DELETE("categorias/{id}")
+    suspend fun deleteCategoria(
+        @Path("id") id: Int
+    ): Response<Unit>
 }

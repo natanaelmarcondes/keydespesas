@@ -28,6 +28,14 @@
             android:name=".CadastroTituloActivity"
             android:label="Novo Título" />
 
+        <activity
+            android:name=".CategoriasActivity"
+            android:label="Categorias" />
+
+        <activity
+            android:name=".DeveloperActivity"
+            android:label="Sobre o Desenvolvedor" />
+
     </application>
 
 </manifest>

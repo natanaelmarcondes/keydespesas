@@ -64,7 +64,7 @@ class CadastroTituloActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener { finish() }
         
         if (tituloParaEdicao != null) {
-            supportActionBar?.title = "Editar Título"
+            supportActionBar?.title = "Editar Despesa"
         }
     }
 
