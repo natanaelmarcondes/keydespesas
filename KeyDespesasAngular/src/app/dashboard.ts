@@ -9,7 +9,8 @@ import {
 } from '@angular/core';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Sidebar } from './sidebar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Subject, switchMap, forkJoin, catchError, of } from 'rxjs';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -31,7 +32,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 @Component({
   selector: 'app-dashboard',
-  imports: [AgGridAngular, CurrencyPipe, DatePipe, TitleEditor, CopyExpense, CopyMonth],
+  imports: [AgGridAngular, CurrencyPipe, DatePipe, TitleEditor, CopyExpense, CopyMonth, Sidebar],
   templateUrl: './dashboard.html',
 })
 export class Dashboard {
@@ -56,7 +57,11 @@ export class Dashboard {
   readonly query = signal('');
   readonly type = signal('');
   readonly status = signal('');
-  readonly page = signal<'titles' | 'categories'>('titles');
+  readonly page = signal<'titles' | 'categories'>(
+    inject(ActivatedRoute).snapshot.queryParamMap.get('page') === 'categories'
+      ? 'categories'
+      : 'titles',
+  );
   readonly selectedCategory = signal<Categoria | null>(null);
   readonly categoryLoading = signal(false);
   readonly newCategoryName = signal('');
@@ -72,8 +77,10 @@ export class Dashboard {
   readonly editorDialog = viewChild.required<ElementRef<HTMLDialogElement>>('editorDialog');
   readonly deleteDialog = viewChild.required<ElementRef<HTMLDialogElement>>('deleteDialog');
   readonly categoryDialog = viewChild.required<ElementRef<HTMLDialogElement>>('categoryDialog');
-  readonly newCategoryDialog = viewChild.required<ElementRef<HTMLDialogElement>>('newCategoryDialog');
-  readonly categoryDeleteDialog = viewChild.required<ElementRef<HTMLDialogElement>>('categoryDeleteDialog');
+  readonly newCategoryDialog =
+    viewChild.required<ElementRef<HTMLDialogElement>>('newCategoryDialog');
+  readonly categoryDeleteDialog =
+    viewChild.required<ElementRef<HTMLDialogElement>>('categoryDeleteDialog');
   readonly newCategoryInput = viewChild.required<ElementRef<HTMLInputElement>>('newCategoryInput');
   readonly grid = viewChild<AgGridAngular<Titulo>>('titlesGrid');
   readonly monthLabel = computed(() =>
@@ -554,18 +561,27 @@ export class Dashboard {
     this.busy.set(true);
     this.categorySaveError.set('');
     const editing = this.editingCategory();
-    const request = editing ? this.api.editarCategoria(editing.id, nome) : this.api.criarCategoria(nome);
+    const request = editing
+      ? this.api.editarCategoria(editing.id, nome)
+      : this.api.criarCategoria(nome);
     request.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: () => {
         this.busy.set(false);
         this.closeNewCategory();
-        this.notice.set(editing ? 'Categoria atualizada com sucesso.' : 'Categoria cadastrada com sucesso.');
+        this.notice.set(
+          editing ? 'Categoria atualizada com sucesso.' : 'Categoria cadastrada com sucesso.',
+        );
         this.loadCategories();
         if (editing) this.refresh();
       },
       error: (response: HttpErrorResponse) => {
         this.busy.set(false);
-        this.categorySaveError.set(this.categoryApiError(response, 'Não foi possível salvar a categoria. Confira o nome e tente novamente.'));
+        this.categorySaveError.set(
+          this.categoryApiError(
+            response,
+            'Não foi possível salvar a categoria. Confira o nome e tente novamente.',
+          ),
+        );
       },
     });
   }
@@ -584,23 +600,32 @@ export class Dashboard {
     if (!category || this.busy()) return;
     this.busy.set(true);
     this.categorySaveError.set('');
-    this.api.excluirCategoria(category.id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: () => {
-        this.busy.set(false);
-        this.closeCategoryDelete();
-        this.notice.set('Categoria excluída com sucesso.');
-        this.loadCategories();
-      },
-      error: (response: HttpErrorResponse) => {
-        this.busy.set(false);
-        this.categorySaveError.set(this.categoryApiError(response, 'Não foi possível excluir a categoria.'));
-      },
-    });
+    this.api
+      .excluirCategoria(category.id)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: () => {
+          this.busy.set(false);
+          this.closeCategoryDelete();
+          this.notice.set('Categoria excluída com sucesso.');
+          this.loadCategories();
+        },
+        error: (response: HttpErrorResponse) => {
+          this.busy.set(false);
+          this.categorySaveError.set(
+            this.categoryApiError(response, 'Não foi possível excluir a categoria.'),
+          );
+        },
+      });
   }
   private categoryApiError(response: HttpErrorResponse, fallback: string): string {
     const body: unknown = response.error;
-    return body && typeof body === 'object' && 'mensagem' in body && typeof body.mensagem === 'string'
-      ? body.mensagem : fallback;
+    return body &&
+      typeof body === 'object' &&
+      'mensagem' in body &&
+      typeof body.mensagem === 'string'
+      ? body.mensagem
+      : fallback;
   }
   exportCsv(): void {
     this.grid()?.api.exportDataAsCsv({

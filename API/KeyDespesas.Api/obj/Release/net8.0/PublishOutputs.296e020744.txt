@@ -1,6 +1,7 @@
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\KeyDespesas.Api.exe
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\dotnet-tools.json
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\KeyDespesas.Api.dll
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\KeyDespesas.Api.deps.json
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\PubTmp\Out\KeyDespesas.Api.runtimeconfig.json

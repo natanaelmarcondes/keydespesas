@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+.panel {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 600;
+}
+form input,
+textarea {
+  width: 100%;
+}
+textarea {
+  font: inherit;
+  color: #253b32;
+  background: #fff;
+  border: 1px solid #cbd6ce;
+  border-radius: 8px;
+  padding: 12px;
+  resize: vertical;
+}
+.help {
+  font-size: 12px;
+  margin: 8px 0 16px;
+}
+.row-actions,
+.list-heading,
+.list-filters {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.row-actions {
+  margin-top: 20px;
+}
+.list-heading {
+  justify-content: space-between;
+}
+.list-filters {
+  margin: 20px 0;
+}
+.list-filters > label:first-child {
+  display: grid;
+  gap: 8px;
+  flex: 1;
+  min-width: 180px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+ag-grid-angular {
+  display: block;
+  height: 580px;
+  width: 100%;
+}
+dialog {
+  max-width: min(480px, calc(100vw - 32px));
+}
+dialog.note-editor {
+  max-width: min(540px, calc(100vw - 32px));
+}
+dialog p {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 680px) {
+  .panel {
+    padding: 16px;
+  }
+}

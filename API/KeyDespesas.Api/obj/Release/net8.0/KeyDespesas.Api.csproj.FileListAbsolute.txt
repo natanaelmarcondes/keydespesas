@@ -415,3 +415,4 @@ D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\refint\KeyDesp
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\KeyDespesas.Api.pdb
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\KeyDespesas.Api.genruntimeconfig.cache
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Release\net8.0\ref\KeyDespesas.Api.dll
+D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\bin\Release\net8.0\dotnet-tools.json

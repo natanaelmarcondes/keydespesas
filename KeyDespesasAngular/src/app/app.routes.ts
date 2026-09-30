@@ -1,6 +1,11 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/auth';
 export const routes: Routes = [
+  {
+    path: 'anotacoes',
+    canActivate: [authGuard],
+    loadComponent: () => import('./note-manager').then((m) => m.NoteManager),
+  },
   { path: 'login', loadComponent: () => import('./login').then((m) => m.Login) },
   {
     path: 'categorias',

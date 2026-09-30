@@ -143,4 +143,5 @@ D:\KeyDespesas\keydespesas\artifacts\categoria-build-check\KeyDespesas.Api.deps.
 D:\KeyDespesas\keydespesas\artifacts\categoria-build-check\KeyDespesas.Api.runtimeconfig.json
 D:\KeyDespesas\keydespesas\artifacts\categoria-build-check\KeyDespesas.Api.dll
 D:\KeyDespesas\keydespesas\artifacts\categoria-build-check\KeyDespesas.Api.pdb
+D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\bin\Debug\net8.0\dotnet-tools.json
 D:\KeyDespesas\keydespesas\API\KeyDespesas.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

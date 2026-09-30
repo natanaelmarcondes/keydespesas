@@ -1,30 +1,6 @@
 <a class="skip-link" href="#main">Ir para o conteúdo</a>
 <div class="app-shell">
-  <aside class="sidebar">
-    <a class="brand" href="/"
-      ><span class="brand-symbol" aria-hidden="true">K</span> Key<span>Despesas</span></a
-    >
-    <nav aria-label="Menu principal">
-      <button
-        [class.active]="page() === 'titles'"
-        (click)="page.set('titles')"
-        [attr.aria-current]="page() === 'titles' ? 'page' : null"
-      >
-        <span aria-hidden="true">&#9638;</span> Visão geral
-      </button>
-      <button
-        [class.active]="page() === 'categories'"
-        (click)="page.set('categories')"
-        [attr.aria-current]="page() === 'categories' ? 'page' : null"
-      >
-        <span aria-hidden="true">&#9636;</span> Categorias
-      </button>
-    </nav>
-    <div class="sidebar-user">
-      <span class="avatar">NM</span>
-      <div><strong>Natanael</strong><small>Conta pessoal</small></div>
-    </div>
-  </aside>
+  <aside app-sidebar [active]="page()" (pageSelected)="page.set($event)"></aside>
   <div class="main-shell">
     <header class="topbar">
       <span

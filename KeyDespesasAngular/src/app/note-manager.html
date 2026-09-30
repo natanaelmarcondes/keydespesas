@@ -1,0 +1,155 @@
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<div class="app-shell">
+  <aside app-sidebar active="notes"></aside>
+  <div class="main-shell">
+    <header class="topbar">
+      <span>Meu financeiro <span class="breadcrumb">/ Anotações</span></span>
+      <button
+        type="button"
+        class="logout-button"
+        aria-label="Sair da conta"
+        title="Sair da conta"
+        (click)="logout()"
+      >
+        <svg
+          aria-hidden="true"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4M14 8l4 4-4 4M8 12h12" />
+        </svg>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <header class="page-heading">
+        <div>
+          <span class="eyebrow">CONTROLE FINANCEIRO</span>
+          <h1>Anotações</h1>
+          <p>Organize suas notas e consulte as anotações arquivadas quando precisar.</p>
+        </div>
+        <button type="button" class="primary" (click)="openNew()" [disabled]="locked()">
+          + Adicionar anotação
+        </button>
+      </header>
+      @if (notice()) {
+        <p class="success-banner" role="status">{{ notice() }}</p>
+      }
+      @if (error()) {
+        <p class="error" role="alert">{{ error() }}</p>
+      }
+
+      <section class="panel" aria-labelledby="notes-list-title" [attr.aria-busy]="loading()">
+        <div class="list-heading">
+          <h2 id="notes-list-title">Anotações cadastradas</h2>
+          <button type="button" (click)="load()" [disabled]="locked()">Atualizar</button>
+        </div>
+        <div class="list-filters">
+          <label for="note-search"
+            >Buscar anotações
+            <input
+              #searchInput
+              id="note-search"
+              type="search"
+              [value]="search()"
+              (input)="search.set(searchInput.value)"
+            />
+          </label>
+          <label class="checkbox-label">
+            <input
+              #archivedInput
+              type="checkbox"
+              [checked]="includeArchived()"
+              [disabled]="locked()"
+              (change)="setIncludeArchived(archivedInput.checked)"
+            />
+            Incluir arquivadas
+          </label>
+        </div>
+        <ag-grid-angular
+          aria-label="Anotações cadastradas"
+          [theme]="theme"
+          [rowData]="notes()"
+          [columnDefs]="columns"
+          [defaultColDef]="defaultColDef"
+          [context]="actions"
+          [loading]="loading()"
+          [quickFilterText]="search()"
+          [localeText]="localeText"
+          [pagination]="true"
+          [paginationPageSize]="20"
+          [paginationPageSizeSelector]="[10, 20, 50]"
+          [ensureDomOrder]="true"
+        />
+      </section>
+    </main>
+  </div>
+</div>
+<dialog
+  #editorDialog
+  class="note-editor"
+  aria-labelledby="note-form-title"
+  (cancel)="busy() ? $event.preventDefault() : cancelEdit()"
+>
+  <div class="modal-heading">
+    <h2 id="note-form-title">{{ editing() === null ? 'Nova anotação' : 'Editar anotação' }}</h2>
+    <button type="button" aria-label="Fechar formulário" (click)="cancelEdit()" [disabled]="busy()">
+      ×
+    </button>
+  </div>
+  <form (submit)="save($event)">
+    <label for="note-title">Título (obrigatório)</label>
+    <input
+      autofocus
+      #titleInput
+      id="note-title"
+      [formField]="fields.titulo"
+      aria-describedby="title-help"
+      [attr.aria-invalid]="invalid() ? 'true' : null"
+    />
+    <p id="title-help" class="help">Até 200 caracteres, sem quebras de linha.</p>
+    <label for="note-description">Descrição (opcional)</label>
+    <textarea id="note-description" rows="5" [formField]="fields.descricao"></textarea>
+    @if (invalid()) {
+      <p class="error" role="alert">
+        Informe um título com até 200 caracteres, sem quebras de linha e que não contenha apenas
+        espaços.
+      </p>
+    }
+    @if (editorError()) {
+      <p class="error" role="alert">{{ editorError() }}</p>
+    }
+    <div class="modal-footer">
+      <button type="button" (click)="cancelEdit()" [disabled]="busy()">Cancelar</button>
+      <button type="submit" class="primary" [disabled]="locked()">
+        {{ busy() ? 'Aguarde…' : 'Salvar anotação' }}
+      </button>
+    </div>
+  </form>
+</dialog>
+<dialog
+  #deleteDialog
+  aria-labelledby="delete-note-title"
+  aria-describedby="delete-note-description"
+  (cancel)="busy() ? $event.preventDefault() : closeDelete()"
+>
+  <h2 id="delete-note-title">Excluir anotação?</h2>
+  <p id="delete-note-description">
+    A anotação <strong>{{ deleting()?.titulo }}</strong> será excluída permanentemente. Esta ação
+    não pode ser desfeita.
+  </p>
+  @if (deleteError()) {
+    <p class="error" role="alert">{{ deleteError() }}</p>
+  }
+  <div class="row-actions">
+    <button type="button" autofocus (click)="closeDelete()" [disabled]="busy()">Cancelar</button>
+    <button type="button" class="danger" (click)="remove()" [disabled]="busy()">
+      {{ busy() ? 'Excluindo…' : 'Excluir definitivamente' }}
+    </button>
+  </div>
+</dialog>

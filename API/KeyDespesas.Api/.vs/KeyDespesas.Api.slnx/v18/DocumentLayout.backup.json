@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\controllers\\anotacoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:controllers\\anotacoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\dtos\\anotacaosalvardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:dtos\\anotacaosalvardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\dtos\\anotacaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:dtos\\anotacaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\models\\anotacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:models\\anotacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\dtos\\titulosalvardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:dtos\\titulosalvardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -17,30 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:controllers\\tituloscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\dtos\\titulosalvardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:dtos\\titulosalvardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\dtos\\titulodetalhedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:dtos\\titulodetalhedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|solutionrelative:models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E98293AD-ECDC-6C92-F5FE-E7ECD9411F2A}|KeyDespesas.Api.csproj|d:\\keydespesas\\keydespesas\\api\\keydespesas.api\\models\\titulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,40 +82,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Anotacao.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Models\\Anotacao.cs",
+              "RelativeDocumentMoniker": "Models\\Anotacao.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Models\\Anotacao.cs",
+              "RelativeToolTip": "Models\\Anotacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T22:27:55.113Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CategoriaDto.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\CategoriaDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\CategoriaDto.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\CategoriaDto.cs",
-              "RelativeToolTip": "Dtos\\CategoriaDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Title": "AnotacaoSalvarDto.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\AnotacaoSalvarDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\AnotacaoSalvarDto.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\AnotacaoSalvarDto.cs",
+              "RelativeToolTip": "Dtos\\AnotacaoSalvarDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T12:52:12.457Z",
+              "WhenOpened": "2026-09-30T22:27:38.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnotacaoDto.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\AnotacaoDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\AnotacaoDto.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\AnotacaoDto.cs",
+              "RelativeToolTip": "Dtos\\AnotacaoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T22:27:17.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnotacoesController.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\AnotacoesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnotacoesController.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\AnotacoesController.cs",
+              "RelativeToolTip": "Controllers\\AnotacoesController.cs",
+              "ViewState": "AgIAAEEBAAAAAAAAAAAiwEkBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T22:26:39.252Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-30T22:25:50.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TituloDetalheDto.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TituloDetalheDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\TituloDetalheDto.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TituloDetalheDto.cs",
-              "RelativeToolTip": "Dtos\\TituloDetalheDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T22:21:34.819Z"
             },
             {
               "$type": "Document",
@@ -135,43 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-06T12:15:08.263Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "TitulosResumoMesDto.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TitulosResumoMesDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\TitulosResumoMesDto.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TitulosResumoMesDto.cs",
-              "RelativeToolTip": "Dtos\\TitulosResumoMesDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T11:39:18.727Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TitulosController.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\TitulosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\TitulosController.cs",
-              "RelativeToolTip": "Controllers\\TitulosController.cs",
-              "ViewState": "AgIAANYAAAAAAAAAAADwv4sBAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T10:32:21.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "TituloListItemDto.cs",
               "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TituloListItemDto.cs",
               "RelativeDocumentMoniker": "Dtos\\TituloListItemDto.cs",
@@ -183,44 +155,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAiwBgAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T10:31:30.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CategoriasController.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\CategoriasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoriasController.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\CategoriasController.cs",
-              "RelativeToolTip": "Controllers\\CategoriasController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAIBJwPMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T22:35:10.271Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAqwCMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAiwHIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-06T10:30:56.115Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TitulosController.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\TitulosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TitulosController.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Controllers\\TitulosController.cs",
+              "RelativeToolTip": "Controllers\\TitulosController.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAADwv4sBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:32:21.537Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "TitulosResumoMesDto.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TitulosResumoMesDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\TitulosResumoMesDto.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Dtos\\TitulosResumoMesDto.cs",
+              "RelativeToolTip": "Dtos\\TitulosResumoMesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T11:39:18.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-06T12:15:08.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:31:30.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Titulo.cs",
               "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Models\\Titulo.cs",
               "RelativeDocumentMoniker": "Models\\Titulo.cs",
@@ -232,19 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Models\\Categoria.cs",
-              "RelativeDocumentMoniker": "Models\\Categoria.cs",
-              "ToolTip": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Models\\Categoria.cs",
-              "RelativeToolTip": "Models\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T10:30:15.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\KeyDespesas\\keydespesas\\API\\KeyDespesas.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
